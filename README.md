@@ -1,1 +1,1 @@
-# openhc-map
+# Open History & Culture Map
