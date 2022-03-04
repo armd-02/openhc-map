@@ -81,6 +81,7 @@ class CMapMaker {
 			list_collapse.classList[params[mode][1]]('show');
 			this.last_modetime = Date.now();
 			this.status = "normal";
+			mode_button.blur();
 		};
 	}
 
