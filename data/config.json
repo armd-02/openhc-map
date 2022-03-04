@@ -26,6 +26,7 @@
         "bookmark": true
     },
     "targets": [
+        "arts",
         "historic",
         "library",
         "museum",
