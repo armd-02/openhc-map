@@ -8,8 +8,7 @@ const LANG = (window.navigator.userLanguage || window.navigator.language || wind
 const FILES = [
 	"./baselist.html", "./data/config.json", './data/config-system.json', './data/config-activities.json',
 	`./data/marker.json`, `./data/category-${LANG}.json`, `data/listtable-${LANG}.json`,
-	`./data/glot-custom.json`, `data/glot-system.json`, './data/overpass-system.json', `./data/overpass-custom.json`,
-	'./data/ukraine.json'];
+	`./data/glot-custom.json`, `data/glot-system.json`, './data/overpass-system.json', `./data/overpass-custom.json`];
 const glot = new Glottologist();
 var gSheet = new GoogleSpreadSheet();
 var cMapmaker = new CMapMaker();
@@ -33,7 +32,6 @@ window.addEventListener("DOMContentLoaded", function () {
 		glot.data = Object.assign(glot.data, arguments[8][0]);						// import glot data
 		Conf = Object.assign(Conf, arguments[9][0]);								// import OverPass
 		Conf.osm = Object.assign(Conf.osm, arguments[10][0].osm);					// import OverPass
-		Conf.ukraine = arguments[10][0];											// import takenouchi data
 
 		window.onresize = winCont.window_resize;    // 画面サイズに合わせたコンテンツ表示切り替え
 		// document.title = glot.get("title");		// Title(no change / Google検索で日本語表示させたいので)
