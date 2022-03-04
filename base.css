@@ -28,6 +28,9 @@ h5{
     font-size: 1.1em !important;
 }
 
+h4{
+    font-size: 1.3em !important;
+}
 /* body dom */
 
 #container {
@@ -200,6 +203,7 @@ tr.selected td{
 
 .modal-title {
     height: 2rem;
+    overflow: scroll;
 }
 
 .bg-clear-old {

@@ -82,7 +82,7 @@ class CMapMaker {
 			this.last_modetime = Date.now();
 			this.status = "normal";
 			mode_button.blur();
-			article.focus();
+			mapid.focus();
 		};
 	}
 
