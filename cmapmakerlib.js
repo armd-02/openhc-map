@@ -313,7 +313,7 @@ class listTable {
 			listTable.flist = list_category.value !== "-" ? listTable.#filter(list_category.value) : listTable.list;
 			listTable.grid.updateConfig({ "data": listTable.flist, "autoWidth": false }).forceRender(document.getElementById("tableid"));
 			cMapmaker.poi_view([list_category.value]);
-			cMapmaker.mode_change('list');
+			//cMapmaker.mode_change('list');
 		};
 		list_category.removeEventListener('change', category_change);
 		list_category.addEventListener('change', category_change);
