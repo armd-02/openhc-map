@@ -23,12 +23,24 @@ var poiCont = (function () {
 				poiCont.set_geojson(poi);
 			});
 			pdata.geojson.forEach((node, node_idx) => {
+				console.log(node_idx);
 				if (latlngs[node.id] == undefined) {
 					let ll = GeoCont.flat2single(node.geometry.coordinates, node.geometry.type);
-					delete node.geometry.coordinates;			// メモリ削減のため座標情報を削除
 					latlngs[node.id] = [ll[1], ll[0]];
+					//delete node.geometry.coordinates;			// メモリ削減のため座標情報を削除
 					geoidx[node.id] = node_idx;
-				}
+					console.log(node.geometry.type);
+					if (node.geometry.type !== "Point") {
+						let targets = pdata.targets[node_idx];
+						let exp = Conf.osm[targets[0]].expression;
+						node.properties.stroke = exp.stroke;
+						node.properties["stroke-width"] = exp["stroke-width"];
+						node.properties.fill = exp.stroke;
+						node.properties["fill-opacity"] = 0.3;
+						leaflet.geojsonAdd(node);
+					};
+				};
+				console.log(node_idx);
 			});
 		},
 		set_geojson: (poi) => {								// add_geojsonのサブ機能
@@ -56,12 +68,23 @@ var poiCont = (function () {
 			return adata.filter(a => a.osmid == osmid);
 		},
 		get_catname: (tags) => {          								// get Category Name from Conf.category(Global Variable)
-			let key1 = Conf.category_keys.find(key => (tags[key] !== undefined) && key !== "*");
-			key1 = key1 == undefined ? "*" : key1;
-			let key2 = tags[key1] == undefined ? "*" : tags[key1];
-			let catname = (key2 !== "") ? Conf.category[key1][key2] : "";   // known tags
-			if (catname == undefined) console.log("get_catname: no key: " + key1 + "," + key2);
-			return (catname == undefined) ? "-" : catname;
+			let catname = "", subcatname = "", mainkey = "", mainval = "";
+			mainkey = Conf.category_keys.find(key => (tags[key] !== undefined) && key !== "*");
+			mainkey = mainkey == undefined ? "*" : mainkey;
+			mainval = tags[mainkey] == undefined ? "*" : tags[mainkey];
+			catname = (mainval !== "*") ? Conf.category[mainkey][mainval] : "-";		// known tags
+			catname = (catname !== undefined) ? catname : "-";
+			let subtag = Conf.category_sub[mainval];									// ex: subtag = {"religion": {"shinto":"a.svg","buddhist":"b.svg"}}
+			if (subtag !== undefined) {
+				for (let subkey of Object.keys(subtag)) {								// subkey: ex: religion
+					for (let subval of Object.keys(subtag[subkey])) { 					// subval: ex: shinto
+						subcatname = (tags[subkey] == subval) ? subtag[subkey][subval] : "";
+						//break;
+					};
+				};
+			};
+			if (catname == "-") console.log("get_catname: no key: " + mainkey + "," + mainval);
+			return [catname, subcatname];
 		},
 		get_wikiname: (tags) => {          								// get Wikipedia Name from tag
 			let wikiname = tags["wikipedia"] ? tags["wikipedia"].split(':')[1] : "";	// value値の":"の右側を返す
@@ -77,7 +100,7 @@ var poiCont = (function () {
 				let tags = node.properties, data = [];
 				Conf.list.columns.poi_fields.forEach(key => {
 					if (key == "#category") {							// #は内部データを利用する意味
-						data.push(poiCont.get_catname(tags));			// category追加
+						data.push(poiCont.get_catname(tags)[0]);		// category追加
 					} else {
 						data.push(tags[key] == undefined ? "-" : tags[key]);	// osmtag追加
 					};
@@ -142,11 +165,11 @@ class poiMarker {
 		keyn = keyn == undefined ? "*" : keyn;		// カテゴリに無いPOIへの対応
 		let keyv = tags[keyn] == undefined ? "*" : tags[keyn];
 		try {
-			let icon = Conf.marker_tag[keyn][keyv];
-			return icon == undefined ? Conf.marker_tag['*']['*'] : icon;
+			let icon = Conf.marker.tag[keyn][keyv];
+			return icon == undefined ? Conf.marker.tag['*']['*'] : icon;
 		} catch {
 			console.log("poiMarker.get_icon: no icon");
-			return Conf.marker_tag['*']['*'];
+			return Conf.marker.tag['*']['*'];
 		};
 	};
 
@@ -281,7 +304,7 @@ class poiMarker {
 // listTable管理(イベントやPoi情報を表示)
 class listTable {
 
-	static constructor() {
+	constructor() {
 		this.grid;
 		this.columns = [];
 		this.lock = false;		// true then disable listtable

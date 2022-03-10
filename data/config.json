@@ -89,6 +89,11 @@
     ],
     "detail_menu": [
         {
+            "glot-model": "osm_open",
+            "linkto": "javascript:winCont.osm_open(location.search)",
+            "divider": false
+        },
+        {
             "glot-model": "button_close",
             "linkto": "javascript:winCont.modal_close()",
             "divider": false

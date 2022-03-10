@@ -25,14 +25,14 @@ window.addEventListener("DOMContentLoaded", function () {
 	let jqXHRs = [];
 	for (let key in FILES) { jqXHRs.push($.get(FILES[key])) };
 	$.when.apply($, jqXHRs).always(function () {
-		let basehtml = arguments[0][0];								// Get Menu HTML
+		let basehtml = arguments[0][0];												// Get Menu HTML
 		for (let i = 1; i <= 6; i++) Conf = Object.assign(Conf, arguments[i][0]);	// Make Config Object
 		Conf.category_keys = Object.keys(Conf.category);							// Make Conf.category_keys
+		Conf.category_subkeys = Object.keys(Conf.category_sub);						// Make Conf.category_subkeys
 		glot.data = Object.assign(glot.data, arguments[7][0]);						// import glot data
 		glot.data = Object.assign(glot.data, arguments[8][0]);						// import glot data
 		Conf = Object.assign(Conf, arguments[9][0]);								// import OverPass
 		Conf.osm = Object.assign(Conf.osm, arguments[10][0].osm);					// import OverPass
-
 		window.onresize = winCont.window_resize;    // 画面サイズに合わせたコンテンツ表示切り替え
 		// document.title = glot.get("title");		// Title(no change / Google検索で日本語表示させたいので)
 		cMapmaker.init(basehtml);					// Mapmaker Initialize

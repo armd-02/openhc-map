@@ -4,6 +4,7 @@
             "*": "-"
         },
         "amenity": {
+            "arts_centre": "arts centre",
             "bar": "bar",
             "bench": "bench",
             "cafe": "cafe",
@@ -176,6 +177,7 @@
             "Cerasus × yedoensis": "sakura"
         },
         "natural": {
+            "stone": "stone",
             "tree": "tree",
             "water": "water",
             "wood": "wood"
@@ -285,6 +287,36 @@
         },
         "suffix_covid19": "(provisional)",
         "bookmarked": "Starred"
+    },
+    "category_sub": {
+        "artwork_type": {
+            "bust": "bust",
+            "sculpture": "sculpture",
+            "mural": "mural",
+            "graffiti": "graffiti",
+            "installation": "installation",
+            "stone": "stone",
+            "painting": "painting",
+            "architecture": "architecture",
+            "mosaic": "mosaic",
+            "tilework": "tilework",
+            "relief": "relief",
+            "fountain": "fountain",
+            "streetart": "streetart",
+            "street_art": "street_art",
+            "azulejo": "azulejo"
+        },
+        "place_of_worship": {
+            "religion": {
+                "shinto": "torii",
+                "buddhist": "buddhist"
+            }
+        },
+        "parking": {
+            "access": {
+                "private": "private"
+            }
+        }
     },
     "opening_hours": {
         "Mo": "Mo",

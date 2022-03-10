@@ -3,7 +3,7 @@ class modal_Wikipedia {
 
     // return elements(Before processing)
     element() {
-        return `<h5>${glot.get("wikipedia")}</h5><div class="mb-3" id="modal_wikipedia"></div>`;
+        return `<div class="mb-3" id="modal_wikipedia"></div>`;
     };
 
     // make html(After processing)

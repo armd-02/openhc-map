@@ -131,6 +131,10 @@
 		"ja": "OpenStreetMapについて",
 		"en": "about OpenStreetMap"
 	},
+	"osm_open": {
+		"ja": "OpenStreetMapで見る",
+		"en": "See in OpenStreetMap"
+	},
 	"target_arts": {
 		"ja": "アート",
 		"en": "arts"

@@ -62,10 +62,14 @@ class winCont {
         $(`#modal_window_progress`).css('width', parseInt(percent) + "%");
     }
 
-    static modal_close() {            // close modal window(note: change this)
+    static modal_close() {              // close modal window(note: change this)
         winCont.modal_mode = false;
         $(`#modal_window`).modal('hide');
         [`#modal_window_yes`, `#modal_window_no`, `#modal_window_close`].forEach(id => $(id).off('click'));
+    }
+
+    static osm_open(param_text){        // open osm window
+        window.open(`https://osm.org/${param_text.replace(/[?&]*/,'',"")}`, '_blank');
     }
 
     static menu_make(menulist, domid) {

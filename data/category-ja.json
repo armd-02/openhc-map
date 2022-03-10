@@ -4,6 +4,7 @@
             "*": "-"
         },
         "amenity": {
+            "arts_centre": "アートセンター",
             "bar": "バー/酒場",
             "bench": "ベンチ",
             "cafe": "カフェ/喫茶店",
@@ -176,6 +177,7 @@
             "Cerasus × yedoensis": "桜"
         },
         "natural": {
+            "stone": "石",
             "tree": "樹木",
             "water": "池",
             "wood": "森"
@@ -285,6 +287,38 @@
         },
         "suffix_covid19": "(暫定)",
         "bookmarked": "スターつき"
+    },
+    "category_sub": {
+        "artwork": {
+            "artwork_type": {
+                "bust": "胸像",
+                "sculpture": "彫刻",
+                "mural": "壁画",
+                "graffiti": "落書き",
+                "installation": "インスタレーション",
+                "stone": "石像",
+                "painting": "描画",
+                "architecture": "建築",
+                "mosaic": "モザイク",
+                "tilework": "タイル細工",
+                "relief": "レリーフ",
+                "fountain": "噴水",
+                "streetart": "ストリートアート",
+                "street_art": "ストリートアート",
+                "azulejo": "アズレージョ"
+            }
+        },
+        "place_of_worship": {
+            "religion": {
+                "shinto": "鳥居",
+                "buddhist": "仏教"
+            }
+        },
+        "parking": {
+            "access": {
+                "private": "私用"
+            }
+        }
     },
     "opening_hours": {
         "Mo": "月",

@@ -21,6 +21,10 @@
                 "tourism=gallery",
                 "amenity=arts_centre"
             ],
+            "expression":{
+                "stroke":"#805050",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -36,6 +40,10 @@
                 "amenity=bar",
                 "amenity=pub"
             ],
+            "expression":{
+                "stroke":"#808080",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -51,6 +59,10 @@
                 "amenity=fast_food",
                 "amenity=cafe"
             ],
+            "expression":{
+                "stroke":"#705050",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -64,6 +76,10 @@
             "tags": [
                 "shop"
             ],
+            "expression":{
+                "stroke":"#507070",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -80,6 +96,10 @@
                 "natural=wood",
                 "landuse=forest"
             ],
+            "expression":{
+                "stroke":"#508050",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -104,6 +124,10 @@
                 "takeaway",
                 "shop"
             ],
+            "expression":{
+                "stroke":"#705070",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -120,6 +144,10 @@
                 "social_facility=shelter",
                 "emergency"
             ],
+            "expression":{
+                "stroke":"#505070",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -134,6 +162,10 @@
             "tags": [
                 "amenity=townhall"
             ],
+            "expression":{
+                "stroke":"#404040",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -148,6 +180,10 @@
             "tags": [
                 "amenity=library"
             ],
+            "expression":{
+                "stroke":"#606060",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -162,6 +198,10 @@
             "tags": [
                 "tourism=museum"
             ],
+            "expression":{
+                "stroke":"#606060",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -175,6 +215,10 @@
             "tags": [
                 "amenity=telephone"
             ],
+            "expression":{
+                "stroke":"#606060",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -188,6 +232,10 @@
             "tags": [
                 "amenity=theatre"
             ],
+            "expression":{
+                "stroke":"#705070",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -201,6 +249,10 @@
             "tags": [
                 "amenity=community_centre"
             ],
+            "expression":{
+                "stroke":"#505070",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -232,6 +284,10 @@
                 "amenity=drinking_water",
                 "landuse=recreation_ground"
             ],
+            "expression":{
+                "stroke":"#508050",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -252,6 +308,10 @@
                 "landuse=orchard",
                 "landuse=aquaculture"
             ],
+            "expression":{
+                "stroke":"#508050",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -265,6 +325,10 @@
             "tags": [
                 "tourism=information"
             ],
+            "expression":{
+                "stroke":"#808080",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -278,6 +342,10 @@
             "tags": [
                 "historic=wayside_shrine"
             ],
+            "expression":{
+                "stroke":"#505050",
+                "stroke-width":2
+            },
             "views": [
                 "name"
             ]
@@ -290,6 +358,10 @@
             "tags": [
                 "historic"
             ],
+            "expression":{
+                "stroke":"#404040",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -305,6 +377,10 @@
                 "natural=water",
                 "landuse=reservoir"
             ],
+            "expression":{
+                "stroke":"#505080",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "religion"
@@ -318,6 +394,10 @@
             "tags": [
                 "amenity=place_of_worship"
             ],
+            "expression":{
+                "stroke":"#7d7d7d",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "religion"
@@ -331,6 +411,10 @@
             "tags": [
                 "leisure=amusement_arcade"
             ],
+            "expression":{
+                "stroke":"#7d7d7d",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -347,6 +431,10 @@
                 "public_transport=station",
                 "railway=station"
             ],
+            "expression":{
+                "stroke":"#7d7d7d",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -361,6 +449,10 @@
             "tags": [
                 "leisure=swimming_pool"
             ],
+            "expression":{
+                "stroke":"#404080",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -374,6 +466,10 @@
             "tags": [
                 "amenity=toilets"
             ],
+            "expression":{
+                "stroke":"#7d7d7d",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -387,6 +483,10 @@
             "tags": [
                 "amenity=vending_machine"
             ],
+            "expression":{
+                "stroke":"#805050",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -400,6 +500,10 @@
             "tags": [
                 "amenity=post_box"
             ],
+            "expression":{
+                "stroke":"#805050",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -419,6 +523,10 @@
                 "place=quarter",
                 "place=neighbourhood"
             ],
+            "expression":{
+                "stroke":"#7d7d7d",
+                "stroke-width":2
+            },
             "views": [
                 "name",
                 "operator"
@@ -437,6 +545,10 @@
             "tags": [
                 "wikipedia"
             ],
+            "expression":{
+                "stroke":"#7d7d7d",
+                "stroke-width":2
+            },           
             "views": [
                 "name"
             ]

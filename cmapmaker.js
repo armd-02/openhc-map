@@ -149,7 +149,7 @@ class CMapMaker {
 				break;
 			}
 		}
-		if (title == "") title = category;
+		if (title == "") title = category[0];
 		if (title == "") title = glot.get("undefined");
 		winCont.menu_make(Conf.detail_menu, "modal_menu");
 		winCont.modal_progress(0);
