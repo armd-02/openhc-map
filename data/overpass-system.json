@@ -22,8 +22,8 @@
                 "amenity=arts_centre"
             ],
             "expression":{
-                "stroke":"#805050",
-                "stroke-width":2
+                "stroke":"#A06060",
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -42,7 +42,7 @@
             ],
             "expression":{
                 "stroke":"#808080",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -61,7 +61,7 @@
             ],
             "expression":{
                 "stroke":"#705050",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -78,7 +78,7 @@
             ],
             "expression":{
                 "stroke":"#507070",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -98,7 +98,7 @@
             ],
             "expression":{
                 "stroke":"#508050",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -126,7 +126,7 @@
             ],
             "expression":{
                 "stroke":"#705070",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -146,7 +146,7 @@
             ],
             "expression":{
                 "stroke":"#505070",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -164,7 +164,7 @@
             ],
             "expression":{
                 "stroke":"#404040",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -181,8 +181,8 @@
                 "amenity=library"
             ],
             "expression":{
-                "stroke":"#606060",
-                "stroke-width":2
+                "stroke":"#606090",
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -200,7 +200,7 @@
             ],
             "expression":{
                 "stroke":"#606060",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -217,7 +217,7 @@
             ],
             "expression":{
                 "stroke":"#606060",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -234,7 +234,7 @@
             ],
             "expression":{
                 "stroke":"#705070",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -251,7 +251,7 @@
             ],
             "expression":{
                 "stroke":"#505070",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -260,15 +260,11 @@
         },
         "park": {
             "overpass": [
+                "way[\"amenity\"]",
                 "node[\"leisure\"=\"park\"]",
                 "way[\"leisure\"=\"park\"]",
                 "node[\"leisure\"=\"playground\"]",
                 "way[\"leisure\"=\"playground\"]",
-                "node[\"amenity\"=\"shelter\"]",
-                "way[\"amenity\"=\"shelter\"]",
-                "node[\"amenity\"=\"clock\"]",
-                "node[\"amenity\"=\"bench\"]",
-                "way[\"amenity\"=\"bench\"]",
                 "node[\"man_made\"=\"tower\"]",
                 "way[\"man_made\"=\"tower\"]",
                 "node[\"man_made\"=\"drinking_water\"]",
@@ -280,13 +276,15 @@
                 "amenity=shelter",
                 "amenity=clock",
                 "amenity=bench",
-                "tower:type=bell_tower",
+                "amenity=fountain",
                 "amenity=drinking_water",
+                "man_made=tower",
+                "tower:type=bell_tower",
                 "landuse=recreation_ground"
             ],
             "expression":{
                 "stroke":"#508050",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -310,7 +308,7 @@
             ],
             "expression":{
                 "stroke":"#508050",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -327,7 +325,7 @@
             ],
             "expression":{
                 "stroke":"#808080",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -344,7 +342,7 @@
             ],
             "expression":{
                 "stroke":"#505050",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name"
@@ -359,8 +357,8 @@
                 "historic"
             ],
             "expression":{
-                "stroke":"#404040",
-                "stroke-width":2
+                "stroke":"#606060",
+                "stroke-width":0
             },
             "views": [
                 "name",
@@ -379,7 +377,7 @@
             ],
             "expression":{
                 "stroke":"#505080",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -396,7 +394,7 @@
             ],
             "expression":{
                 "stroke":"#7d7d7d",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -413,7 +411,7 @@
             ],
             "expression":{
                 "stroke":"#7d7d7d",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -433,7 +431,7 @@
             ],
             "expression":{
                 "stroke":"#7d7d7d",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -451,7 +449,7 @@
             ],
             "expression":{
                 "stroke":"#404080",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -468,7 +466,7 @@
             ],
             "expression":{
                 "stroke":"#7d7d7d",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -485,7 +483,7 @@
             ],
             "expression":{
                 "stroke":"#805050",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -502,7 +500,7 @@
             ],
             "expression":{
                 "stroke":"#805050",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -525,7 +523,7 @@
             ],
             "expression":{
                 "stroke":"#7d7d7d",
-                "stroke-width":2
+                "stroke-width":1
             },
             "views": [
                 "name",
@@ -534,7 +532,8 @@
         },
         "wikipedia": {
             "marker": "wikipedia.svg",
-            "api": "wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=",
+            "api_": "wikipedia.org/w/api.php?format=json&action=query&prop=extracts%7Cimages&exintro=&explaintext=&titles=",
+            "api":"wikipedia.org/api/rest_v1/page/summary/",
             "domain": "wikipedia.org",
             "tag": "wikipedia",
             "overpass": [
@@ -546,8 +545,8 @@
                 "wikipedia"
             ],
             "expression":{
-                "stroke":"#7d7d7d",
-                "stroke-width":2
+                "stroke":"#7070C0",
+                "stroke-width":1
             },           
             "views": [
                 "name"

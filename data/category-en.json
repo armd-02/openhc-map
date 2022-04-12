@@ -6,36 +6,64 @@
         "amenity": {
             "arts_centre": "arts centre",
             "bar": "bar",
+            "bbq": "bbq",
             "bench": "bench",
+            "bicycle_parking": "bicycle parking",
             "cafe": "cafe",
-            "community_centre": "community center",
+            "clinic": "clinic",
             "clock": "clock",
+            "college": "college",
+            "community_centre": "community center",
+            "courthouse": "courthouse",
+            "crematorium": "crematorium",
+            "doctors": "doctor",
             "drinking_water": "drinking water",
             "fast_food": "fast food",
             "ferry_terminal": "ferry terminal",
+            "fire_station": "fire station",
             "food_court": "food court",
+            "fountain": "fountain",
             "hospital": "Hospital",
             "ice_cream": "ice cream",
+            "internet_cafe": "internet cafe",
+            "kindergarten": "kindergarten",
             "library": "library",
+            "marketplace": "marketplace",
+            "parking": "parking",
+            "pharmacy": "pharmacy",
+            "photo_booth": "photo booth",
             "place_of_worship": "place of worship",
             "police": "police",
             "post_box": "POST box",
             "post_office": "POST Office",
+            "prison": "prison",
             "pub": "pub",
+            "public_bath": "public bath",
+            "public_bookcase": "public bookcase",
+            "recycling": "recycling",
             "restaurant": "restaurant",
             "school": "school",
             "shelter": "shelter",
+            "shower": "shower",
+            "social_facility": "social facility",
             "telephone": "telephone",
-            "townhall": "town hall",
             "theatre": "theatre",
             "toilets": "toilets",
-            "vending_machine": "vending machine"
+            "townhall": "town hall",
+            "university": "university",
+            "vending_machine": "vending machine",
+            "veterinary": "veterinary care",
+            "waste_basket": "waste basket",
+            "water_point": "drinking water"
         },
         "assembly_point:tsunami": {
             "yes": "tsunami evacuation"
         },
         "attraction": {
             "animal": "animal"
+        },
+        "diplomatic": {
+            "embassy": "embassy"
         },
         "shop": {
             "agrarian": "agrarian",
@@ -237,6 +265,7 @@
             "cannon": "cannon",
             "memorial": "memorial",
             "monument": "monument",
+            "heritage": "heritage",
             "wayside_shrine": "wayside shrine",
             "wayside_cross": "cross",
             "vehicle": "vehicle"
@@ -252,7 +281,9 @@
         "man_made": {
             "torii": "torii",
             "lamp": "lantern",
-            "tower": "tower"
+            "tower": "tower",
+            "surveillance": "surveillance",
+            "works": "works"
         },
         "landuse": {
             "farmland": "farmland",
@@ -284,6 +315,9 @@
             "suburb": "suburb",
             "quarter": "quarter",
             "neighbourhood": "neighbourhood"
+        },
+        "waterway": {
+            "river": "river"
         },
         "suffix_covid19": "(provisional)",
         "bookmarked": "Starred"

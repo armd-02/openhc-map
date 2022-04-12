@@ -17,18 +17,20 @@
                 "college": "college.svg",
                 "community_centre": "town-hall.svg",
                 "courthouse": "courthouse.svg",
-                "crematorium": "point.svg",
+                "crematorium": "marker-stroked.svg",
                 "doctors": "doctor.svg",
                 "drinking_water": "drinking-water.svg",
                 "fast_food": "fast-food.svg",
                 "ferry_terminal": "ferry.svg",
                 "fire_station": "fire-station.svg",
                 "food_court": "restaurant.svg",
+                "fountain": "fountain.svg",
                 "hospital": "hospital.svg",
                 "ice_cream": "ice-cream.svg",
                 "internet_cafe": "internet_cafe.svg",
-                "kindergarten": "point.svg",
+                "kindergarten": "marker-stroked.svg",
                 "library": "library.svg",
+                "marketplace": "shopping-basket.svg",
                 "parking": "parking.svg",
                 "pharmacy": "pharmacy.svg",
                 "photo_booth": "photo.svg",
@@ -36,7 +38,7 @@
                 "police": "police.svg",
                 "post_box": "post_box.svg",
                 "post_office": "post-JP.svg",
-                "prison": "point.svg",
+                "prison": "marker-stroked.svg",
                 "pub": "beer.svg",
                 "public_bath": "public_bath.svg",
                 "public_bookcase": "public_bookcase.svg",
@@ -62,6 +64,9 @@
             "attraction": {
                 "animal": "animal.svg"
             },
+            "diplomatic": {
+                "embassy": "diplomatic.svg"
+            },
             "shop": {
                 "agrarian": "agrarian.svg",
                 "alcohol": "alcohol-shop.svg",
@@ -69,7 +74,7 @@
                 "bakery": "bakery.svg",
                 "beverages": "bottles.svg",
                 "beauty": "beauty_salon.svg",
-                "baby_goods": "point.svg",
+                "baby_goods": "marker-stroked.svg",
                 "boutique": "clothing-store.svg",
                 "bicycle": "bicycle.svg",
                 "books": "book_store.svg",
@@ -88,7 +93,7 @@
                 "clothes": "clothing-store.svg",
                 "dairy": "cheese.svg",
                 "computer": "computer.svg",
-                "department_store": "department_store.svg",
+                "department_store": "shop.svg",
                 "deli": "meat.svg",
                 "optician": "optician.svg",
                 "doityourself": "tools.svg",
@@ -107,7 +112,7 @@
                 "hairdresser": "hairdresser.svg",
                 "health_food": "shop.svg",
                 "ice_cream": "ice-cream.svg",
-                "pawnbroker": "point.svg",
+                "pawnbroker": "marker-stroked.svg",
                 "kiosk": "store.svg",
                 "mall": "shopping_mall.svg",
                 "motorcycle": "motorcycle.svg",
@@ -188,11 +193,16 @@
                 "viewpoint": "spotting_scope.svg"
             },
             "historic": {
+                "aircraft": "airfield.svg",
                 "archaeological_site": "archaeological-site.svg",
                 "castle": "castle-JP.svg",
+                "cannon": "cannon.svg",
                 "memorial": "monument.svg",
                 "monument": "monument.svg",
-                "wayside_shrine": "ojizou.svg"
+                "heritage": "archaeological-site.svg",
+                "wayside_shrine": "ojizou.svg",
+                "wayside_cross": "cross_christ.svg",
+                "vehicle": "car.svg"
             },
             "information": {
                 "board": "info_board.svg",
@@ -206,11 +216,12 @@
                 "torii": "shinto.svg",
                 "lamp": "lantern.svg",
                 "tower": "Emoji_Black_bell2.svg",
-                "surveillance": "point.svg"
+                "surveillance": "marker-stroked.svg",
+                "works": "factory.svg"
             },
             "landuse": {
                 "farmland": "farm.svg",
-                "religious": "wikipedia.svg",
+                "religious": "marker-stroked.svg",
                 "industrial": "industry.svg",
                 "forest": "park-alt1.svg",
                 "orchard": "park.svg",
@@ -228,7 +239,7 @@
                 "swimming_pool": "swimming.svg"
             },
             "office": {
-                "government": "point.svg"
+                "government": "marker-stroked.svg"
             },
             "railway": {
                 "station": "train.svg"
@@ -237,24 +248,36 @@
                 "station": "train.svg"
             },
             "place": {
+                "square": "square-stroked.svg",
                 "suburb": "triangle.svg",
                 "quarter": "triangle.svg",
                 "neighbourhood": "triangle-stroked.svg"
+            },
+            "waterway": {
+                "river": "water.svg"
             },
             "wikipedia": {
                 "*": "wikipedia.svg"
             }
         },
         "subtag": {
+            "landuse": {
+                "religion": {
+                    "christian": "cross_christ.svg",
+                    "shinto": "torii.svg",
+                    "buddhist": "buddhist.svg"
+                }
+            },
             "place_of_worship": {
                 "religion": {
+                    "christian": "cross_christ.svg",
                     "shinto": "torii.svg",
                     "buddhist": "buddhist.svg"
                 }
             },
             "parking": {
                 "access": {
-                    "private": "point.svg"
+                    "private": "marker-stroked.svg"
                 }
             }
         }

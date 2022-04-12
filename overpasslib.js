@@ -9,7 +9,7 @@ class OverPassControl {
 		this.UseServer = 0;
 	}
 
-	get(targets) {
+	get(targets, progress) {
 		return new Promise((resolve, reject) => {
 			var LL = GeoCont.get_LL();
 			let CT = GeoCont.ll2tile(map.getBounds().getCenter(), OvPassCnt.CacheZoom);
@@ -32,7 +32,10 @@ class OverPassControl {
 				$.ajax({
 					"type": 'GET', "dataType": 'json', "url": url, "cache": false, "xhr": () => {
 						var xhr = new window.XMLHttpRequest();
-						xhr.addEventListener("progress", (evt) => { console.log("OvPassCnt: Progress: " + evt.loaded) }, false);
+						xhr.addEventListener("progress", (evt) => {
+							console.log("OvPassCnt: Progress: " + evt.loaded);
+							if (progress !== undefined) progress(evt.loaded);
+						}, false);
 						return xhr;
 					}
 				}).done(function (data) {

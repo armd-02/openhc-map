@@ -23,13 +23,10 @@ var poiCont = (function () {
 				poiCont.set_geojson(poi);
 			});
 			pdata.geojson.forEach((node, node_idx) => {
-				console.log(node_idx);
 				if (latlngs[node.id] == undefined) {
 					let ll = GeoCont.flat2single(node.geometry.coordinates, node.geometry.type);
 					latlngs[node.id] = [ll[1], ll[0]];
-					//delete node.geometry.coordinates;			// メモリ削減のため座標情報を削除
 					geoidx[node.id] = node_idx;
-					console.log(node.geometry.type);
 					if (node.geometry.type !== "Point") {
 						let targets = pdata.targets[node_idx];
 						let exp = Conf.osm[targets[0]].expression;
@@ -40,7 +37,6 @@ var poiCont = (function () {
 						leaflet.geojsonAdd(node);
 					};
 				};
-				console.log(node_idx);
 			});
 		},
 		set_geojson: (poi) => {								// add_geojsonのサブ機能
@@ -79,11 +75,11 @@ var poiCont = (function () {
 				for (let subkey of Object.keys(subtag)) {								// subkey: ex: religion
 					for (let subval of Object.keys(subtag[subkey])) { 					// subval: ex: shinto
 						subcatname = (tags[subkey] == subval) ? subtag[subkey][subval] : "";
-						//break;
+						break;
 					};
 				};
 			};
-			if (catname == "-") console.log("get_catname: no key: " + mainkey + "," + mainval);
+			if (catname == "-") console.log("get_catname: no key: " + mainkey + "," + mainval + " / " + tags.id);
 			return [catname, subcatname];
 		},
 		get_wikiname: (tags) => {          								// get Wikipedia Name from tag
@@ -166,6 +162,14 @@ class poiMarker {
 		let keyv = tags[keyn] == undefined ? "*" : tags[keyn];
 		try {
 			let icon = Conf.marker.tag[keyn][keyv];
+			let subtag = Conf.marker.subtag[keyn];						// ex: subtag = {"religion": {"shinto":"a.svg","buddhist":"b.svg"}}
+			if (subtag !== undefined) {
+				for (let subkey of Object.keys(subtag)) {				// subkey: ex: religion
+					for (let subval of Object.keys(subtag[subkey])) { 	// subval: ex: shinto
+						if (tags[subkey] == subval) { icon = subtag[subkey][subval]; break };
+					};
+				};
+			};
 			return icon == undefined ? Conf.marker.tag['*']['*'] : icon;
 		} catch {
 			console.log("poiMarker.get_icon: no icon");
@@ -304,45 +308,18 @@ class poiMarker {
 // listTable管理(イベントやPoi情報を表示)
 class listTable {
 
-	constructor() {
-		this.grid;
-		this.columns = [];
-		this.lock = false;		// true then disable listtable
-		this.list = [];
-		this.timeout;
-		this.height;
-		this.flist;
-	};
-
 	static init() { // dataListに必要な初期化
+		console.log("listTable: init.");
 		listTable.columns = Conf.list.columns.common;
 		listTable.height = window.innerHeight * 0.4;
-
-		function keyword_change() {        				// キーワード検索
-			if (listTable.timeout > 0) {
-				window.clearTimeout(listTable.timeout);
-				listTable.timeout = 0;
-			};
-			listTable.timeout = window.setTimeout(() => {
-				listTable.flist = listTable.#filter(list_keyword.value);
-				listTable.grid.updateConfig({ "data": listTable.flist }).forceRender(document.getElementById("tableid"));
-				cMapmaker.mode_change('list');
-			}, 500);
-		};
-		list_keyword.removeEventListener('change', keyword_change);
-		list_keyword.addEventListener('change', keyword_change);
-
-		function category_change() {        			// カテゴリ名でキーワード検索
-			listTable.flist = list_category.value !== "-" ? listTable.#filter(list_category.value) : listTable.list;
-			listTable.grid.updateConfig({ "data": listTable.flist, "autoWidth": false }).forceRender(document.getElementById("tableid"));
-			cMapmaker.poi_view([list_category.value]);
-			//cMapmaker.mode_change('list');
-		};
-		list_category.removeEventListener('change', category_change);
-		list_category.addEventListener('change', category_change);
+		listTable.grid;
+		listTable.lock = false;		// true then disable listtable
+		listTable.list = [];
+		listTable.flist;
+		listTable.categorys;			// category list 
 	};
 
-	static make() {  							// カテゴリのリスト表示
+	static make() {  									// カテゴリのリスト表示
 		listTable.list = listTable.list == undefined ? [] : listTable.list;
 		listTable.flist = this.#filter(list_category.value);
 		let option = { "columns": listTable.columns, "data": listTable.flist, "height": listTable.height, sort: true, fixedHeader: true, "autoWidth": false };
@@ -372,21 +349,53 @@ class listTable {
 		});
 	};
 
-	static make_select(targets) {
+	// make category list
+	static make_category(targets) {
 		let pois = [];
 		winCont.select_clear(`list_category`);
+		listTable.categorys = [];
 		for (const target of targets) {
 			switch (target) {
 				case "targets":		// ターゲットリストを表示
 					pois = Conf.targets.map(name => { return [glot.get(`target_${name}`), name] });
-					pois.map(poi => winCont.select_add(`list_category`, poi[0], poi[1]));
+					pois.map(poi => {
+						winCont.select_add(`list_category`, poi[0], poi[1]);
+						listTable.categorys.push(poi[1]);
+					});
 					break;
 				default:			// タグからカテゴリを表示
 					pois = listTable.list.map(data => { return data[2] });
 					pois = pois.filter((x, i, self) => { return self.indexOf(x) === i });
-					pois.map(poi => winCont.select_add(`list_category`, poi, poi));
+					pois.map(poi => {
+						winCont.select_add(`list_category`, poi, poi)
+						listTable.categorys.push(poi);
+					});
 					break;
 			};
+		};
+	};
+
+	// select category
+	static select_category(catname) {
+		for (const category of this.categorys) {
+			if (catname == category) {
+				list_category.value = catname;
+				break;
+			}
+		};
+	};
+
+	static filter_category() {		// subset of change list_category
+		if (listTable.list.length > 0) {
+			listTable.flist = list_category.value !== "-" ? listTable.#filter(list_category.value) : listTable.list;
+			listTable.grid.updateConfig({ "data": listTable.flist, "autoWidth": false }).forceRender(document.getElementById("tableid"));
+		};
+	};
+
+	static filter_keyword() {		// subset of change list_keyword
+		if (listTable.list.length > 0) {
+			listTable.flist = listTable.#filter(list_keyword.value);
+			listTable.grid.updateConfig({ "data": listTable.flist }).forceRender(document.getElementById("tableid"));
 		};
 	};
 
@@ -413,15 +422,9 @@ class listTable {
 	}
 
 	static #filter(keyword) {								// 指定したキーワードで絞り込み
+		if (listTable.list == undefined) return undefined;
 		return listTable.list.filter((row) => {
 			return row.join(',').indexOf(keyword) > -1;
 		});
-	};
-
-	static #categorys(result) {    							// resultを元に種別リストを作成
-		winCont.select_clear(`list_category`);
-		let pois = result.map(data => { return data[2] });
-		pois = pois.filter((x, i, self) => { return self.indexOf(x) === i });
-		pois.map(poi => winCont.select_add(`list_category`, poi, poi));
 	};
 }

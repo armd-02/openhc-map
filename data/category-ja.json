@@ -6,36 +6,64 @@
         "amenity": {
             "arts_centre": "アートセンター",
             "bar": "バー/酒場",
+            "bbq": "バーベキュー",
             "bench": "ベンチ",
+            "bicycle_parking": "駐輪場(バイク)",
             "cafe": "カフェ/喫茶店",
-            "community_centre": "公民館",
+            "clinic": "クリニック",
             "clock": "時計",
+            "college": "大学",
+            "community_centre": "公民館",
+            "courthouse": "裁判所",
+            "crematorium": "火葬場",
+            "doctors": "医者",
             "drinking_water": "水飲み場",
             "fast_food": "ファーストフード",
             "ferry_terminal": "フェリーターミナル",
+            "fire_station": "消防署",
             "food_court": "フードコート",
+            "fountain": "噴水",
             "hospital": "病院",
             "ice_cream": "アイスクリーム店",
+            "internet_cafe": "インターネットカフェ",
+            "kindergarten": "幼稚園",
             "library": "図書館",
+            "marketplace": "市場",
+            "parking": "駐車場",
+            "pharmacy": "薬局",
+            "photo_booth": "フォトブース",
             "place_of_worship": "宗教施設",
             "police": "警察署",
             "post_box": "郵便ポスト",
             "post_office": "郵便局",
+            "prison": "刑務所",
             "pub": "パブ/居酒屋",
+            "public_bath": "公衆浴場",
+            "public_bookcase": "街角文庫",
+            "recycling": "リサイクル",
             "restaurant": "レストラン",
             "school": "学校",
             "shelter": "東屋/避難所",
+            "shower": "シャワー",
+            "social_facility": "社会福祉施設",
             "telephone": "公衆電話",
-            "townhall": "役所",
             "theatre": "劇場",
             "toilets": "トイレ",
-            "vending_machine": "自動販売機"
+            "townhall": "役所",
+            "university": "総合大学",
+            "vending_machine": "自動販売機",
+            "veterinary": "動物病院",
+            "waste_basket": "ゴミ箱",
+            "water_point": "給水所"
         },
         "assembly_point:tsunami": {
             "yes": "津波避難"
         },
         "attraction": {
             "animal": "動物"
+        },
+        "diplomatic": {
+            "embassy": "大使館"
         },
         "shop": {
             "agrarian": "農協/農業用品店",
@@ -237,6 +265,7 @@
             "cannon": "大砲(展示)",
             "memorial": "石碑",
             "monument": "記念建造物",
+            "heritage": "遺産",
             "wayside_shrine": "地蔵・道祖神",
             "wayside_cross": "十字架",
             "vehicle": "車両(展示)"
@@ -252,7 +281,9 @@
         "man_made": {
             "torii": "鳥居",
             "lamp": "灯籠",
-            "tower": "塔/鐘楼"
+            "tower": "塔/鐘楼",
+            "surveillance": "監視機器",
+            "works": "工場"
         },
         "landuse": {
             "farmland": "農地",
@@ -284,6 +315,9 @@
             "suburb": "区",
             "quarter": "大字",
             "neighbourhood": "小字"
+        },
+        "waterway": {
+            "river": "川"
         },
         "suffix_covid19": "(暫定)",
         "bookmarked": "スターつき"

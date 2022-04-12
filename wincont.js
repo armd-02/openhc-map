@@ -39,6 +39,7 @@ class winCont {
             };
         };
         ["yes", "no", "close"].forEach(keyn => addButton(keyn));
+        modal_window_share.innerHTML=glot.get('share_link');
         winCont.modal_progress(0);
         $(`#${MW}`).modal({ backdrop: false, keyboard: true });
         winCont.modal_mode = true;

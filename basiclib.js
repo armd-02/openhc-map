@@ -63,12 +63,11 @@ class Basic {
     getWikipedia(lang, url) {      // get wikipedia contents
         return new Promise((resolve, reject) => {
             let encurl = encodeURI(url);
-            encurl = "https://" + lang + "." + Conf.osm.wikipedia.api + encurl;
-            $.get({ url: encurl, dataType: "jsonp" }, function (data) {
-                let key = Object.keys(data.query.pages);
-                let text = data.query.pages[key].extract;
-                console.log(text);
-                resolve(text);
+            encurl = "https://" + lang + "." + Conf.osm.wikipedia.api + encurl + "?origin=*";
+            console.log(encurl);
+            $.get({ url: encurl, dataType: "json" }, function (data) {
+                console.log(data.extract);
+                resolve([data.extract, data.thumbnail]);
             });
         });
     }
