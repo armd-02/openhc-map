@@ -267,33 +267,38 @@ class cMapEvents {
 		map.on('zoomend', () => cmap_events.map_zoom());						// ズーム終了時に表示更新
 		list_keyword.addEventListener('change', cmap_events.keyword_change);
 		list_category.addEventListener('change', cmap_events.category_change);	// category change
-	}
+	};
 
 	map_move() {                							// map.moveend発生時のイベント
 		return new Promise((resolve, reject) => {
-			console.log("cmapmaker: move event start.");
-			if (this.busy > 1) return;							// 処理中の時は戻る
-			if (this.busy == 1) clearTimeout(this.id);			// no break and cancel old timer.
-			this.busy = 1;
-			this.id = setTimeout(() => {
-				console.log("cmapmaker: move event end.");
-				this.busy = 2;
-				cMapmaker.poi_get().then((status) => {
-					this.busy = 0;
-					cMapmaker.poi_view([list_category.value]);
-					if (status.update && Conf.listTable.update_mode !== "static") {
-						listTable.list = poiCont.list(Conf.targets);
-						listTable.make();				// view all list
-						resolve();
-					} else {
-						cmap_events.map_move();			// 失敗時はリトライ(接続先はoverpass.jsで変更)
-					};
-				}).catch(() => {
-					this.busy = 0;
-					reject();
-				});
-			}, 700);
+			this.#map_move_promise(resolve, reject);
 		});
+	};
+
+	#map_move_promise(resolve, reject) {
+		console.log("cmapmaker: move event start.");
+		if (this.busy > 1) { reject(); return; };		// 処理中の時は戻る
+		if (this.busy == 1) clearTimeout(this.id);		// no break and cancel old timer.
+		this.busy = 1;
+		this.id = setTimeout(() => {
+			console.log("cmapmaker: move event end.");
+			this.busy = 2;
+			cMapmaker.poi_get().then((status) => {
+				this.busy = 0;
+				cMapmaker.poi_view([list_category.value]);
+				if (Conf.listTable.update_mode == "static" || status.update) {
+					listTable.list = poiCont.list(Conf.targets);
+					listTable.make();					// view all list
+					resolve();
+				} else {
+					cmap_events.#map_move_promise(resolve, reject);	// 失敗時はリトライ(接続先はoverpass.jsで変更)
+				};
+			}).catch(() => {
+				this.busy = 0;
+				console.log("mapmove:reject");
+				reject();
+			});
+		}, 700);
 	};
 
 	map_zoom() {				// View Zoom Level & Status Comment
