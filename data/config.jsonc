@@ -3,8 +3,8 @@
     "default": {
         "keep_default_view": false,
         "default_view": [
-            50.45096,
-            30.52254
+            35.0206,
+            135.7670
         ],
         "maxbounds": "",
         "_maxbounds": [
@@ -62,7 +62,7 @@
         "targetName": "activity"
     },
     "splash": {
-        "url": "./image/Kyiv.jpg"
+        "url": "./image/openhc.png"
     },
     "static": {
         "mode": false,

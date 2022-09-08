@@ -71,6 +71,7 @@ window.addEventListener("DOMContentLoaded", function () {
 				winCont.splash(false);
 				if (location.search !== "") {    	// 引数がある場合
 					let search = location.search.replace(/[?&]fbclid.*/, '').replace(/%2F/g, '/');  // facebook対策
+					search = search.slice(-1) == "/" ? search.slice(0, -1) : search;				// facebook対策(/が挿入される)
 					let params = search.replace('-', '/').replace('=', '/').slice(1).split('&');	// -= -> / and split param
 					history.replaceState('', '', location.pathname + search + location.hash);
 					for (const param of params) {
@@ -100,7 +101,7 @@ window.addEventListener("DOMContentLoaded", function () {
 					function gtag() { dataLayer.push(arguments); };
 					gtag('js', new Date());
 					gtag('config', Conf.google.Analytics);
-				}; */
+		}; */
 		console.log("initial: End.");
 	});
 });
