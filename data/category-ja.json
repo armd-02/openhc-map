@@ -9,6 +9,7 @@
             "bbq": "バーベキュー",
             "bench": "ベンチ",
             "bicycle_parking": "駐輪場(バイク)",
+            "bus_station": "バスターミナル",
             "cafe": "カフェ/喫茶店",
             "clinic": "クリニック",
             "clock": "時計",
@@ -23,11 +24,13 @@
             "fire_station": "消防署",
             "food_court": "フードコート",
             "fountain": "噴水",
+            "grave_yard": "墓地",
             "hospital": "病院",
             "ice_cream": "アイスクリーム店",
             "internet_cafe": "インターネットカフェ",
             "kindergarten": "幼稚園",
             "library": "図書館",
+            "nightclub": "クラブ/ライブハウス",
             "marketplace": "市場",
             "parking": "駐車場",
             "pharmacy": "薬局",
@@ -46,6 +49,7 @@
             "shelter": "東屋/避難所",
             "shower": "シャワー",
             "social_facility": "社会福祉施設",
+            "studio": "スタジオ",
             "telephone": "公衆電話",
             "theatre": "劇場",
             "toilets": "トイレ",
@@ -62,53 +66,93 @@
         "attraction": {
             "animal": "動物"
         },
+        "barrier": {
+            "gate": "門"
+        },
+        "bridge": {
+            "yes": "橋"
+        },
+        "building": {
+            "apartments": "アパート",
+            "office": "事務所",
+            "public": "公共建築",
+            "temple": "寺院",
+            "residential": "住居",
+            "yes": "建物"
+        },
         "diplomatic": {
             "embassy": "大使館"
+        },
+        "office": {
+            "government": "政府機関"
         },
         "shop": {
             "agrarian": "農協/農業用品店",
             "alcohol": "酒屋",
+            "appliance": "家電量販店",
+            "art": "美術品店",
+            "baby_goods": "幼児用店舗",
             "bakery": "パン屋",
+            "beauty": "美容室",
             "beverages": "飲料店",
-            "books": "本屋",
             "bicycle": "自転車屋",
+            "books": "本屋",
+            "boutique": "ブティック",
             "brewing_supplies": "醸造所",
             "butcher": "精肉店",
             "car": "自動車屋",
             "car_parts": "自動車パーツ店",
             "cheese": "チーズ店",
+            "chemist": "薬局",
             "chocolate": "チョコレート店",
+            "clothes": "洋服店",
             "coffee": "コーヒー店",
+            "computer": "パソコン屋",
             "confectionery": "お菓子店(甘味)",
             "convenience": "コンビニエンスストア",
-            "deli": "お弁当/惣菜屋",
+            "cosmetics": "化粧品店",
             "dairy": "乳製品店",
+            "deli": "お弁当/惣菜屋",
+            "department_store": "百貨店",
+            "doityourself": "ホームセンター",
             "dry_cleaning": "クリーニング店",
             "electronics": "家電販売屋",
             "farm": "農場直売店",
             "florist": "花屋",
             "frozen_food": "冷凍食品専門店",
             "funeral_directors": "葬儀社",
-            "greengrocer": "八百屋",
+            "furniture": "家具屋",
+            "garden_centre": "園芸用品店",
             "gift": "土産屋",
+            "greengrocer": "八百屋",
             "hairdresser": "美容院",
+            "hardware": "金物店",
             "health_food": "健康食品店",
             "ice_cream": "アイスクリーム店",
+            "interior_decoration": "内装用品",
             "kiosk": "キオスク",
+            "laundry": "ランドリー",
             "mall": "ショッピングモール",
+            "massage": "マッサージ店",
+            "medical_supply": "医療用品店",
             "motorcycle": "自転車屋",
+            "optician": "メガネ店",
             "pasta": "パスタ専門店",
             "pastry": "お菓子店(焼き菓子)",
+            "pawnbroker": "質屋",
+            "rice": "米穀店",
             "seafood": "鮮魚店",
+            "second_hand": "中古屋",
+            "shoes": "靴屋",
             "spices": "スパイス専門店",
-            "tobacco": "タバコ屋",
-            "tea": "お茶専門店",
-            "water": "飲料水専門店",
-            "wine": "ワイン専門店",
             "supermarket": "スーパーマーケット",
+            "tea": "お茶専門店",
+            "ticket": "チケット店",
+            "tobacco": "タバコ屋",
+            "travel_agency": "旅行代理店",
             "variety_store": "雑貨店",
-            "doityourself": "ホームセンター",
-            "appliance": "家電量販店"
+            "water": "飲料水専門店",
+            "wine": "ワイン専門店"
         },
         "cuisine": {
             "american": "アメリカ料理",
@@ -199,24 +243,27 @@
             "diet:halal": "ハラル",
             "diet:kosher": "コーシェル"
         },
-        "species": {
-            "Cherry blossom": "桜",
-            "Cerasus itosakura": "桜",
-            "Cerasus × yedoensis": "桜"
-        },
         "natural": {
             "stone": "石",
             "tree": "樹木",
             "water": "池",
+            "wetland": "湿地帯",
             "wood": "森"
         },
         "emergency": {
+            "assembly_point": "待ち合わせスポット",
             "fire_extinguisher": "消火器",
             "fire_hydrant": "消火栓",
-            "defibrillator": "AED"
+            "fire_hose": "消火ホース",
+            "defibrillator": "AED",
+            "siren": "サイレン",
+            "water_tank": "防火水槽"
         },
         "highway": {
-            "traffic_signals": "信号機"
+            "bus_stop": "バス停",
+            "traffic_signals": "信号機",
+            "street_lamp": "街灯",
+            "elevator": "エレベーター"
         },
         "social_facility": {
             "shelter": "一時避難所"
@@ -252,20 +299,25 @@
         },
         "tourism": {
             "attraction": "観光名所",
-            "viewpoint": "ビューポイント",
             "artwork": "アート作品",
+            "gallery": "ギャラリー",
+            "guest_house": "ゲストハウス",
             "information": "案内",
             "museum": "美術館",
-            "gallery": "ギャラリー"
+            "viewpoint": "ビューポイント"
         },
         "historic": {
             "aircraft": "航空機(展示)",
             "archaeological_site": "遺跡・古墳",
+            "boundary_stone": "境界石",
             "castle": "お城",
             "cannon": "大砲(展示)",
             "memorial": "石碑",
             "monument": "記念建造物",
+            "milestone": "一里塚",
             "heritage": "遺産",
+            "tomb": "墓",
+            "locomotive": "機関車(引退済み)",
             "wayside_shrine": "地蔵・道祖神",
             "wayside_cross": "十字架",
             "vehicle": "車両(展示)"
@@ -279,6 +331,7 @@
             "guidepost": "道しるべ"
         },
         "man_made": {
+            "bridge": "橋",
             "torii": "鳥居",
             "lamp": "灯籠",
             "tower": "塔/鐘楼",
@@ -311,13 +364,18 @@
             "station": "鉄道駅"
         },
         "place": {
+            "city": "都市",
             "square": "広場",
             "suburb": "区",
             "quarter": "大字",
             "neighbourhood": "小字"
         },
         "waterway": {
-            "river": "川"
+            "canal": "運河",
+            "lock_gate": "関門",
+            "river": "川",
+            "stream": "小川",
+            "waterfall": "滝"
         },
         "suffix_covid19": "(暫定)",
         "bookmarked": "スターつき"
@@ -331,6 +389,7 @@
                 "graffiti": "落書き",
                 "installation": "インスタレーション",
                 "stone": "石像",
+                "statue": "彫像",
                 "painting": "描画",
                 "architecture": "建築",
                 "mosaic": "モザイク",
@@ -351,6 +410,18 @@
         "parking": {
             "access": {
                 "private": "私用"
+            }
+        },
+        "tree": {
+            "species": {
+                "Cherry blossom": "桜",
+                "Cerasus itosakura": "桜",
+                "Cerasus × yedoensis": "桜"
+            },
+            "species:en": {
+                "Cherry blossom": "桜",
+                "Cerasus itosakura": "桜",
+                "Cerasus × yedoensis": "桜"
             }
         }
     },

@@ -7,6 +7,7 @@ class Basic {
 
     formatDate(date, format) {
         // date format
+        if (Number.isNaN(date.getDate())) return "";
         try {
             format = format.replace(/YYYY/g, date.getFullYear());
             format = format.replace(/YY/g, date.getFullYear().toString().slice(-2));
@@ -97,6 +98,10 @@ class Basic {
         return Array.from(new Uint8Array(digest)).map(v => v.toString(16).padStart(2, '0')).join('');
     }
 
-    //   getLatLng(keyword, (address) => { return address }, () => { return [] }
+    //二次元配列 -> CSV形式の文字列に変換
+    makeArray2CSV(arr, col = ',', row = '\n') {
+        const escape = (s) => { return `"${s.replace(/\"/g, '\"\"')}"` };
+        return arr.map((row) => row.map((cell) => escape(Array.isArray(cell) ? cell.join("//") : cell)).join(col)).join(row);
+    }
 
 };

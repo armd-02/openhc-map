@@ -1,9 +1,9 @@
 {
-	"title": {
+	"site_title": {
 		"ja": "Open History & Culture Map",
 		"en": "Open History & Culture Map"
 	},
-	"subtitle": {
+	"site_subtitle": {
 		"ja": "Powered by Community Map Maker",
 		"en": "Powered by Community Map Maker"
 	},
@@ -32,7 +32,7 @@
 		"en": "Event Dates: "
 	},
 	"activities": {
-		"ja": "各種活動",
+		"ja": "活動履歴",
 		"en": "Activities"
 	},
 	"libc": {
@@ -46,6 +46,18 @@
 	"memories": {
 		"ja": "思い出など",
 		"en": "Memorials"
+	},
+	"actdate": {
+		"ja": "確認日",
+		"en": "Disaster Date"
+	},
+	"ds_subject": {
+		"ja": "作業名",
+		"en": "Subject"
+	},
+	"ds_detail_url": {
+		"ja": "詳細URL",
+		"en": "Detail URL"
 	},
 	"act_grade": {
 		"ja": "学年",
@@ -118,10 +130,6 @@
 	"libc_ymd": {
 		"ja": "時期",
 		"en": "Around"
-	},
-	"memories_title": {
-		"ja": "タイトル",
-		"en": "Title"
 	},
 	"memories_author": {
 		"ja": "投稿者",

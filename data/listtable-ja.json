@@ -7,30 +7,30 @@
                     "hidden": true
                 },
                 {
-                    "id": "updatetime",
-                    "name": "日付",
-                    "hidden": true
-                },
-                {
                     "id": "category",
                     "name": "種類"
                 },
                 {
                     "id": "name",
                     "name": "題名"
+                },
+                {
+                    "id": "updatetime",
+                    "name": "日付",
+                    "hidden": false
                 }
             ],
             "poi_fields": [
                 "id",
-                "timestamp",
                 "#category",
-                "name"
+                "name",
+                "timestamp"
             ],
             "act_fields": [
                 "id",
-                "updatetime",
                 "category",
-                "title"
+                "title",
+                "updatetime"
             ]
         }
     }

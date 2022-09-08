@@ -1,3 +1,4 @@
+// Community Mapmaker Config
 {
     "default": {
         "keep_default_view": false,
@@ -16,32 +17,44 @@
                 136.11914
             ]
         ],
-        "initZoom": 16,
-        "pc_minZoom": 5,
+        "initZoom": 14,
+        "pc_minZoom": 1,
         "phone_minZoom": 5,
-        "maxZoom": 21,
+        "maxZoom": 22,
         "zoomSnap": 0.5,
-        "iconViewZoom": 15,
-        "act_iconViewZoom": 5,
+        "PoiLoadZoom": 14,
         "bookmark": true
+    },
+    "PoiViewZoom": {
+        "arts": 14,
+        "historic": 14,
+        "information": 16,
+        "library": 13,
+        "museum": 13,
+        "worship": 14,
+        "wikipedia": 15
     },
     "targets": [
         "arts",
         "historic",
+        "information",
         "library",
         "museum",
         "worship",
         "wikipedia"
     ],
     "listTable": {
+        // "targets"はConf.targetsをカテゴリ表示、"activity"はactivity(フォームデータ)を表示
         "targets": [
             "targets"
         ],
-        "update_mode": ""
-    },
-    "playback": {
-        "zoomLevel": 15,
-        "timer": 4000
+        "update_mode": "",
+        "playback": {
+            "view": false,
+            "zoomLevel": 15,
+            "timer": 4000
+        },
+        "download": false
     },
     "google": {
         "Analytics": "",
@@ -49,7 +62,7 @@
         "targetName": "activity"
     },
     "splash": {
-        "url": "image/Kyiv.jpg"
+        "url": "./image/Kyiv.jpg"
     },
     "static": {
         "mode": false,
@@ -65,6 +78,7 @@
             }
         }
     },
+    // トップメニュー一覧
     "menu": [
         {
             "glot-model": "licence_title",
@@ -87,10 +101,11 @@
             "divider": false
         }
     ],
+    // 詳細表示のモーダル設定
     "detail_menu": [
         {
             "glot-model": "osm_open",
-            "linkto": "javascript:winCont.osm_open(location.search)",
+            "linkto": "javascript:winCont.osm_open(cMapmaker.open_osmid)",
             "divider": false
         },
         {
@@ -100,6 +115,16 @@
         }
     ],
     "detail_view": {
-        "openfirst": false
+        // 詳細モーダルの一番上を開くかどうか
+        "openfirst": true,
+        // 詳細モーダルの追加ボタン 
+        "buttons": [
+            {
+                "btn_class": "btn btn-light border-secondary",
+                "code": "javascript:cMapmaker.url_share()",
+                "icon_class": "fas fa-clone",
+                "btn_glot_name": "share_link"
+            }
+        ]
     }
 }

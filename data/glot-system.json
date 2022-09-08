@@ -1,4 +1,8 @@
 {
+	"cat_select": {
+		"ja": "選択表示",
+		"en": "Select display"
+	},
 	"act_add": {
 		"ja": "追加",
 		"en": "Add information"
@@ -31,6 +35,14 @@
 		"ja": "登録失敗。ユーザー名とパスワードを確認してください",
 		"en": "failed. Please check your username and password"
 	},
+	"title": {
+		"ja": "タイトル",
+		"en": "Title"
+	},
+	"download": {
+		"ja": "一覧表をダウンロード",
+		"en": "list download"
+	},
 	"zoomlevel": {
 		"ja": "ズームレベル：",
 		"en": "Zoom Level: "
@@ -44,8 +56,12 @@
 		"en": "Getdate: "
 	},
 	"share_link": {
-		"ja": "URLコピー",
-		"en": "URL Copy"
+		"ja": "Link",
+		"en": "Link"
+	},
+	"add_activity": {
+		"ja": "情報追加",
+		"en": "add Activity"
 	},
 	"morezoom": {
 		"ja": "もっとズームしてください",
@@ -135,6 +151,10 @@
 		"ja": "OpenStreetMapで見る",
 		"en": "See in OpenStreetMap"
 	},
+	"target_activity": {
+		"ja": "活動内容",
+		"en": "activity"
+	},
 	"target_arts": {
 		"ja": "アート",
 		"en": "arts"
@@ -160,7 +180,7 @@
 		"en": "takeout"
 	},
 	"target_disaster": {
-		"ja": "災害",
+		"ja": "防災",
 		"en": "disaster"
 	},
 	"target_government": {

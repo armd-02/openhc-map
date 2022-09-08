@@ -9,6 +9,7 @@
             "bbq": "bbq",
             "bench": "bench",
             "bicycle_parking": "bicycle parking",
+            "bus_station": "bus station",
             "cafe": "cafe",
             "clinic": "clinic",
             "clock": "clock",
@@ -23,11 +24,13 @@
             "fire_station": "fire station",
             "food_court": "food court",
             "fountain": "fountain",
+            "grave_yard": "grave yard",
             "hospital": "Hospital",
             "ice_cream": "ice cream",
             "internet_cafe": "internet cafe",
             "kindergarten": "kindergarten",
             "library": "library",
+            "nightclub": "nightclub",
             "marketplace": "marketplace",
             "parking": "parking",
             "pharmacy": "pharmacy",
@@ -46,6 +49,7 @@
             "shelter": "shelter",
             "shower": "shower",
             "social_facility": "social facility",
+            "studio": "studio",
             "telephone": "telephone",
             "theatre": "theatre",
             "toilets": "toilets",
@@ -62,53 +66,93 @@
         "attraction": {
             "animal": "animal"
         },
+        "barrier": {
+            "gate": "barrier"
+        },
+        "bridge": {
+            "yes": "bridge"
+        },
+        "building": {
+            "apartments": "apartments",
+            "office": "office",
+            "public": "public",
+            "temple": "temple",
+            "residential": "residential",
+            "yes": "building"
+        },
         "diplomatic": {
             "embassy": "embassy"
+        },
+        "office": {
+            "government": "government"
         },
         "shop": {
             "agrarian": "agrarian",
             "alcohol": "alcohol",
+            "appliance": "appliance",
+            "art": "art",
+            "baby_goods": "baby goods",
             "bakery": "bakery",
+            "beauty": "beauty salon",
             "beverages": "beverages",
-            "books": "books",
             "bicycle": "bicycle",
+            "books": "book",
+            "boutique": "boutique",
             "brewing_supplies": "brewing supplies",
             "butcher": "butcher",
             "car": "car",
             "car_parts": "car parts",
             "cheese": "cheese",
+            "chemist": "chemist",
             "chocolate": "chocolate",
+            "clothes": "clothes",
             "coffee": "coffee",
+            "computer": "computer",
             "confectionery": "confectionery",
             "convenience": "convenience",
-            "deli": "deli",
+            "cosmetics": "cosmetics",
             "dairy": "dairy",
+            "deli": "deli",
+            "department_store": "department store",
+            "doityourself": "doityourself",
             "dry_cleaning": "dry cleaning",
             "electronics": "electronic",
             "farm": "farm",
             "florist": "florist",
             "frozen_food": "frozen food",
             "funeral_directors": "cemetery",
-            "greengrocer": "greengrocer",
+            "furniture": "furniture",
+            "garden_centre": "garden center",
             "gift": "gift",
+            "greengrocer": "greengrocer",
             "hairdresser": "hairdresser",
+            "hardware": "hardware",
             "health_food": "health food",
             "ice_cream": "ice cream",
+            "interior_decoration": "interior decoration",
             "kiosk": "kiosk",
+            "laundry": "laundry",
             "mall": "shopping mall",
+            "massage": "massage",
+            "medical_supply": "medical supply",
             "motorcycle": "motorcycle",
+            "optician": "optician",
             "pasta": "pasta",
             "pastry": "pastry",
-            "seafood": "eafood",
+            "pawnbroker": "pawnbroker",
+            "rice": "rice",
+            "seafood": "seafood",
+            "second_hand": "second hand",
+            "shoes": "shoes",
             "spices": "spices",
-            "tobacco": "pipe",
-            "tea": "tea",
-            "water": "water",
-            "wine": "wine",
             "supermarket": "supermarket",
+            "tea": "tea",
+            "ticket": "ticket",
+            "tobacco": "pipe",
+            "travel_agency": "travel agency",
             "variety_store": "variety",
-            "doityourself": "doityourself",
-            "appliance": "appliance"
+            "water": "water",
+            "wine": "wine"
         },
         "cuisine": {
             "american": "american",
@@ -199,24 +243,27 @@
             "diet:halal": "halal",
             "diet:kosher": "kosher"
         },
-        "species": {
-            "Cherry blossom": "sakura",
-            "Cerasus itosakura": "sakura",
-            "Cerasus × yedoensis": "sakura"
-        },
         "natural": {
             "stone": "stone",
             "tree": "tree",
             "water": "water",
+            "wetland": "wetland",
             "wood": "wood"
         },
         "emergency": {
+            "assembly_point": "assembly point",
             "fire_extinguisher": "extinguisher",
             "fire_hydrant": "hydrant",
-            "defibrillator": "AED"
+            "fire_hose": "hose",
+            "defibrillator": "AED",
+            "siren": "Siren",
+            "water_tank": "Water Tank"
         },
         "highway": {
-            "traffic_signals": "traffic signals"
+            "bus_stop": "bus stop",
+            "traffic_signals": "traffic signals",
+            "street_lamp": "street lamp",
+            "elevator": "elevator"
         },
         "social_facility": {
             "shelter": "temporary sleeping"
@@ -252,20 +299,25 @@
         },
         "tourism": {
             "attraction": "attraction",
-            "viewpoint": "viewpoint",
             "artwork": "artwork",
+            "gallery": "gallery",
+            "guest_house": "guest house",
             "information": "information",
             "museum": "museum",
-            "gallery": "gallery"
+            "viewpoint": "viewpoint"
         },
         "historic": {
             "aircraft": "aircraft",
             "archaeological_site": "archaeological site",
+            "boundary_stone": "boundary stone",
             "castle": "castle",
             "cannon": "cannon",
             "memorial": "memorial",
             "monument": "monument",
+            "milestone": "milestone",
             "heritage": "heritage",
+            "tomb": "tomb",
+            "locomotive": "locomotive",
             "wayside_shrine": "wayside shrine",
             "wayside_cross": "cross",
             "vehicle": "vehicle"
@@ -279,6 +331,7 @@
             "guidepost": "guidepost"
         },
         "man_made": {
+            "bridge": "bridge",
             "torii": "torii",
             "lamp": "lantern",
             "tower": "tower",
@@ -311,13 +364,18 @@
             "station": "station"
         },
         "place": {
+            "city": "city",
             "square": "square",
             "suburb": "suburb",
             "quarter": "quarter",
             "neighbourhood": "neighbourhood"
         },
         "waterway": {
-            "river": "river"
+            "canal": "canal",
+            "lock_gate": "lock gate",
+            "river": "river",
+            "stream": "stream",
+            "waterfall": "waterfall"
         },
         "suffix_covid19": "(provisional)",
         "bookmarked": "Starred"
@@ -329,6 +387,7 @@
             "mural": "mural",
             "graffiti": "graffiti",
             "installation": "installation",
+            "statue": "statue",
             "stone": "stone",
             "painting": "painting",
             "architecture": "architecture",
@@ -349,6 +408,18 @@
         "parking": {
             "access": {
                 "private": "private"
+            }
+        },
+        "tree": {
+            "species": {
+                "Cherry blossom": "sakura",
+                "Cerasus itosakura": "sakura",
+                "Cerasus × yedoensis": "sakura"
+            },
+            "species:en": {
+                "Cherry blossom": "sakura",
+                "Cerasus itosakura": "sakura",
+                "Cerasus × yedoensis": "sakura"
             }
         }
     },
