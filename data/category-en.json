@@ -17,6 +17,7 @@
             "community_centre": "community center",
             "courthouse": "courthouse",
             "crematorium": "crematorium",
+            "cinema": "cinema",
             "doctors": "doctor",
             "drinking_water": "drinking water",
             "fast_food": "fast food",
@@ -74,16 +75,22 @@
         },
         "building": {
             "apartments": "apartments",
+            "museum": "museum",
             "office": "office",
             "public": "public",
             "temple": "temple",
             "residential": "residential",
+            "retail": "retail",
             "yes": "building"
         },
         "diplomatic": {
             "embassy": "embassy"
         },
+        "disused:amenity": {
+            "school": "school(disused)"
+        },
         "office": {
+            "company": "company",
             "government": "government"
         },
         "shop": {
@@ -123,6 +130,7 @@
             "funeral_directors": "cemetery",
             "furniture": "furniture",
             "garden_centre": "garden center",
+            "general":"general",
             "gift": "gift",
             "greengrocer": "greengrocer",
             "hairdresser": "hairdresser",
@@ -244,6 +252,7 @@
             "diet:kosher": "kosher"
         },
         "natural": {
+            "peak": "peak",
             "stone": "stone",
             "tree": "tree",
             "water": "water",
@@ -304,11 +313,13 @@
             "guest_house": "guest house",
             "information": "information",
             "museum": "museum",
-            "viewpoint": "viewpoint"
+            "viewpoint": "viewpoint",
+            "zoo": "zoo"
         },
         "historic": {
             "aircraft": "aircraft",
             "archaeological_site": "archaeological site",
+            "battlefield": "battlefield",
             "boundary_stone": "boundary stone",
             "castle": "castle",
             "cannon": "cannon",
@@ -347,6 +358,7 @@
             "aquaculture": "aquaculture",
             "reservoir": "reservoir",
             "grass": "grass",
+            "retail":"retail",
             "recreation_ground": "recreation ground"
         },
         "leisure": {

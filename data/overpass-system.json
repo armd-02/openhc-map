@@ -417,13 +417,96 @@
                 "name"
             ]
         },
-        "historic": {
+        "historic_area": {
             "overpass": [
-                "node[\"historic\"]",
-                "way[\"historic\"]"
+                "node[\"historic\"=\"archaeological_site\"]",
+                "way[\"historic\"=\"archaeological_site\"]",
+                "node[\"historic\"=\"battlefield\"]",
+                "way[\"historic\"=\"battlefield\"]",
+                "node[\"historic\"=\"building\"]",
+                "way[\"historic\"=\"building\"]",
+                "node[\"historic\"=\"manor\"]",
+                "way[\"historic\"=\"manor\"]",
+                "node[\"historic\"=\"castle\"]",
+                "way[\"historic\"=\"castle\"]",
+                "node[\"historic\"=\"fort\"]",
+                "way[\"historic\"=\"fort\"]"
             ],
             "tags": [
-                "historic"
+                "historic=archaeological_site",
+                "historic=battlefield",
+                "historic=building",
+                "historic=manor",
+                "historic=castle",
+                "historic=fort"
+            ],
+            "expression": {
+                "stroke": "#606060",
+                "stroke-width": 0
+            },
+            "titles": [
+                "name",
+                "operator"
+            ]
+        },
+        "historic_poi": {
+            "overpass": [
+                "node[\"historic\"=\"aircraft\"]",
+                "way[\"historic\"=\"aircraft\"]",
+                "node[\"historic\"=\"cannon\"]",
+                "way[\"historic\"=\"cannon\"]",
+                "node[\"historic\"=\"highwater_mark\"]",
+                "way[\"historic\"=\"highwater_mark\"]",
+                "node[\"historic\"=\"locomotive\"]",
+                "way[\"historic\"=\"locomotive\"]",
+                "node[\"historic\"=\"memorial\"]",
+                "way[\"historic\"=\"memorial\"]",
+                "node[\"historic\"=\"mine_shaft\"]",
+                "way[\"historic\"=\"mine_shaft\"]",
+                "node[\"historic\"=\"milestone\"]",
+                "way[\"historic\"=\"milestone\"]",
+                "node[\"historic\"=\"monument\"]",
+                "way[\"historic\"=\"monument\"]",
+                "node[\"historic\"=\"rune_stone\"]",
+                "way[\"historic\"=\"rune_stone\"]",
+                "node[\"historic\"=\"ship\"]",
+                "way[\"historic\"=\"ship\"]",
+                "node[\"historic\"=\"stone\"]",
+                "way[\"historic\"=\"stone\"]",
+                "node[\"historic\"=\"tank\"]",
+                "way[\"historic\"=\"tank\"]",
+                "node[\"historic\"=\"tomb\"]",
+                "way[\"historic\"=\"tomb\"]",
+                "node[\"historic\"=\"tower\"]",
+                "way[\"historic\"=\"tower\"]",
+                "node[\"historic\"=\"vehicle\"]",
+                "way[\"historic\"=\"vehicle\"]",
+                "node[\"historic\"=\"wayside_cross\"]",
+                "way[\"historic\"=\"wayside_cross\"]",
+                "node[\"historic\"=\"wayside_shrine\"]",
+                "way[\"historic\"=\"wayside_shrine\"]",
+                "node[\"historic\"=\"wreck\"]",
+                "way[\"historic\"=\"wreck\"]"
+            ],
+            "tags": [
+                "historic=aircraft",
+                "historic=cannon",
+                "historic=highwater_mark",
+                "historic=locomotive",
+                "historic=memorial",
+                "historic=mine_shaft",
+                "historic=milestone",
+                "historic=monument",
+                "historic=rune_stone",
+                "historic=ship",
+                "historic=stone",
+                "historic=tank",
+                "historic=tomb",
+                "historic=tower",
+                "historic=vehicle",
+                "historic=wayside_cross",
+                "historic=wayside_shrine",
+                "historic=wreck"
             ],
             "expression": {
                 "stroke": "#606060",

@@ -19,6 +19,7 @@
                 "community_centre": "town-hall.svg",
                 "courthouse": "courthouse.svg",
                 "crematorium": "marker-stroked.svg",
+                "cinema": "cinema.svg",
                 "doctors": "doctor.svg",
                 "drinking_water": "drinking-water.svg",
                 "fast_food": "fast-food.svg",
@@ -66,7 +67,7 @@
                 "yes": "shelter.svg"
             },
             "attraction": {
-                "animal": "animal.svg"
+                "animal": "zoo.svg"
             },
             "barrier": {
                 "gate": "gate.svg"
@@ -76,16 +77,22 @@
             },
             "building": {
                 "apartments": "home.svg",
+                "museum": "museum.svg",
                 "office": "town_hall.svg",
                 "public": "home.svg",
                 "temple": "place-of-worship.svg",
                 "residential": "residential-community.svg",
+                "retail": "shop.svg",
                 "yes": "home.svg"
             },
             "diplomatic": {
                 "embassy": "diplomatic.svg"
             },
+            "disused:amenity": {
+                "school": "ruins.svg"
+            },
             "office": {
+                "company": "briefcase.svg",
                 "government": "town_hall.svg"
             },
             "shop": {
@@ -125,6 +132,7 @@
                 "funeral_directors": "cemetery.svg",
                 "furniture": "furniture.svg",
                 "garden_centre": "garden_centre.svg",
+                "general":"shop.svg",
                 "gift": "gift.svg",
                 "greengrocer": "carrot.svg",
                 "hairdresser": "hairdresser.svg",
@@ -157,6 +165,7 @@
                 "wine": "alcohol-shop.svg"
             },
             "natural": {
+                "peak": "mountain.svg",
                 "tree": "park.svg",
                 "water": "water.svg",
                 "wetland": "wetland.svg",
@@ -218,11 +227,13 @@
                 "information": "information.svg",
                 "museum": "museum.svg",
                 "picnic_site": "picnic-site.svg",
-                "viewpoint": "spotting_scope.svg"
+                "viewpoint": "spotting_scope.svg",
+                "zoo": "zoo.svg"
             },
             "historic": {
                 "aircraft": "airfield.svg",
                 "archaeological_site": "archaeological-site.svg",
+                "battlefield": "ruins.svg",
                 "boundary_stone": "milestone.svg",
                 "castle": "castle-JP.svg",
                 "cannon": "cannon.svg",
@@ -260,6 +271,7 @@
                 "orchard": "park.svg",
                 "aquaculture": "aquarium.svg",
                 "reservoir": "water.svg",
+                "retail":"shop.svg",
                 "grass": "lawn.svg",
                 "recreation_ground": "pitch.svg"
             },

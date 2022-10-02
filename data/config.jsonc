@@ -26,17 +26,19 @@
         "bookmark": true
     },
     "PoiViewZoom": {
-        "arts": 14,
-        "historic": 14,
-        "information": 16,
-        "library": 13,
-        "museum": 13,
+        "arts": 16,
+        "historic_area": 14,
+        "historic_poi": 16,
+        "information": 18,
+        "library": 12,
+        "museum": 12,
         "worship": 14,
         "wikipedia": 15
     },
     "targets": [
         "arts",
-        "historic",
+        "historic_area",
+        "historic_poi",
         "information",
         "library",
         "museum",

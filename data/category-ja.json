@@ -17,6 +17,7 @@
             "community_centre": "公民館",
             "courthouse": "裁判所",
             "crematorium": "火葬場",
+            "cinema": "映画館",
             "doctors": "医者",
             "drinking_water": "水飲み場",
             "fast_food": "ファーストフード",
@@ -74,16 +75,22 @@
         },
         "building": {
             "apartments": "アパート",
+            "museum": "博物館",
             "office": "事務所",
             "public": "公共建築",
             "temple": "寺院",
             "residential": "住居",
+            "retail": "店舗",
             "yes": "建物"
         },
         "diplomatic": {
             "embassy": "大使館"
         },
+        "disused:amenity": {
+            "school": "廃校"
+        },
         "office": {
+            "company": "company",
             "government": "政府機関"
         },
         "shop": {
@@ -123,6 +130,7 @@
             "funeral_directors": "葬儀社",
             "furniture": "家具屋",
             "garden_centre": "園芸用品店",
+            "general":"雑貨店",
             "gift": "土産屋",
             "greengrocer": "八百屋",
             "hairdresser": "美容院",
@@ -244,6 +252,7 @@
             "diet:kosher": "コーシェル"
         },
         "natural": {
+            "peak": "頂上",
             "stone": "石",
             "tree": "樹木",
             "water": "池",
@@ -304,11 +313,13 @@
             "guest_house": "ゲストハウス",
             "information": "案内",
             "museum": "美術館",
-            "viewpoint": "ビューポイント"
+            "viewpoint": "ビューポイント",
+            "zoo": "動物園"
         },
         "historic": {
             "aircraft": "航空機(展示)",
             "archaeological_site": "遺跡・古墳",
+            "battlefield": "古戦場",
             "boundary_stone": "境界石",
             "castle": "お城",
             "cannon": "大砲(展示)",
@@ -346,6 +357,7 @@
             "orchard": "果樹園",
             "aquaculture": "養殖場(水域)",
             "reservoir": "貯水池",
+            "retail":"商業エリア",
             "grass": "芝生",
             "recreation_ground": "レクリエーション広場"
         },

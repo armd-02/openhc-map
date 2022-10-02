@@ -26,6 +26,7 @@ class poiCont {
 			poiCont.set_geojson(poi);
 		});
 		poiCont.pdata.geojson.forEach((node, node_idx) => {
+			if (node.properties["disused:amenity"] !== undefined) console.log("a");
 			if (poiCont.latlngs[node.id] == undefined) {
 				let ll = GeoCont.flat2single(node.geometry.coordinates, node.geometry.type);
 				poiCont.latlngs[node.id] = [ll[1], ll[0]];
@@ -215,6 +216,7 @@ class poiMarker {
 		const make_marker = function (params) {		// Make Marker(Sometimes multiple markers are returned)
 			return new Promise((resolve, reject) => {
 				let tags = params.poi.geojson.properties.tags == undefined ? params.poi.geojson.properties : params.poi.geojson.properties.tags;
+				if (tags["disused:amenity"] !== undefined) console.log("a");
 				let name = tags[params.langname] == undefined ? tags.name : tags[params.langname];
 				name = tags["bridge:name"] == undefined ? name : tags["bridge:name"];	// 橋の名称があれば優先
 				name = (name == "" || name == undefined) ? "" : name;
@@ -249,6 +251,7 @@ class poiMarker {
 		let all = poiCont.get_target(target);
 		if (all.pois.geojson !== undefined) {	// pois&acts表示
 			all.pois.geojson.forEach(function (geojson, idx) {
+				if (geojson.properties["disused:amenity"] !== undefined) console.log("a");
 				let poi = { "geojson": all.pois.geojson[idx], "targets": all.pois.targets[idx], "latlng": all.pois.latlng[idx], "enable": all.pois.enable[idx] };
 				if (poi.enable && GeoCont.check_inner(poi.latlng, LL)) {
 					let actlists = poiCont.get_actlist(poi.geojson.id);
