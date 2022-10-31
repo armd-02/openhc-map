@@ -33,12 +33,14 @@ class poiCont {
 					poiCont.geoidx[node.id] = node_idx;
 					if (node.geometry.type !== "Point") {
 						let targets = poiCont.pdata.targets[node_idx];
-						let exp = Conf.osm[targets[0]].expression;
-						node.properties.stroke = exp.stroke;
-						node.properties["stroke-width"] = exp["stroke-width"];
-						node.properties.fill = exp.stroke;
-						node.properties["fill-opacity"] = 0.3;
-						leaflet.geojsonAdd(node);
+						if (targets.length > 0) {
+							let exp = Conf.osm[targets[0]].expression;
+							node.properties.stroke = exp.stroke;
+							node.properties["stroke-width"] = exp["stroke-width"];
+							node.properties.fill = exp.stroke;
+							node.properties["fill-opacity"] = 0.3;
+							leaflet.geojsonAdd(node);
+						};
 					};
 				};
 			};

@@ -74,12 +74,12 @@ class CMapMaker {
 					console.log("[success]cMapmaker: get_poi End.");
 					global_status.innerHTML = "";
 					resolve({ "update": true });
-				}).catch(() => {
+				})/*.catch(() => {
 					winCont.spinner(false);
 					console.log("[error]cMapmaker: get_poi end.");
 					global_status.innerHTML = "";
 					resolve({ "update": false });
-				});
+				})*/;
 			};
 		});
 
@@ -239,13 +239,13 @@ class cMapEvents {
 
 	map_move() {                							// map.moveend発生時のイベント
 		return new Promise((resolve, reject) => {
-			this.#map_move_promise(resolve, reject);
+			if (cmap_events.busy < 2) this.#map_move_promise(resolve, reject);
 		});
 	};
 
 	#map_move_promise(resolve, reject) {
 		console.log("cMapEvents: map_move Start.");
-		if (this.busy > 1) { reject(); return; };		// 処理中の時は戻る
+		if (this.busy > 1) return; 		// 処理中の時は戻る
 		if (this.busy == 1) clearTimeout(this.id);		// no break and cancel old timer.
 		this.busy = 1;
 		this.id = setTimeout(() => {
@@ -260,13 +260,14 @@ class cMapEvents {
 					listTable.make_category(Conf.listTable.targets);
 					resolve();
 				} else {
+					this.busy = 0;
 					cmap_events.#map_move_promise(resolve, reject);	// 失敗時はリトライ(接続先はoverpass.jsで変更)
 				};
-			})/* .catch(() => {
+			}).catch(() => {
 				this.busy = 0;
 				console.log("cMapEvents: map_move: Reject");
 				reject();
-			}); */
+			});
 		}, 700);
 	}
 
