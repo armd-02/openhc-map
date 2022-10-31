@@ -5,7 +5,7 @@
 - Open History & Culture Map
     - https://armd-02.github.io/openhc-map/
 
-## form元のプロジェクト
+## fork元のプロジェクト
 - Open History & Culture MapはCommunity Mapmakerをベースに開発しています。
 - Open History & Culture Mapの成果はCommunity Mapmakerへ還元する予定です。
 - https://github.com/K-Sakanoshita/community_mapmaker
@@ -30,4 +30,5 @@
   - 表示されるアイコン種別を色々と追加
   - ズームレベルで表示する地物を細分化(historicをエリアとPOIに分割)
   - 一部表示されない地物が表示されるようになる
-  
+- 2022/11/01 小さなバグを修正
+-  

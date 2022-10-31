@@ -4,6 +4,7 @@
 class poiCont {
 	static pdata = { geojson: [], targets: [], enable: [] };					//poi data variable
 	static adata = [];															//act data variable /  poi's latlng & geoidx
+	static cat_cache = {};
 	static latlngs = {};
 	static geoidx = {};
 
@@ -19,26 +20,26 @@ class poiCont {
 	static all_clear() { poiCont.pdata = { geojson: [], targets: [], enable: [] } };
 	static set_actjson(json) { poiCont.adata = json };			// set GoogleSpreadSheetから帰ってきたJson
 	static add_geojson(pois) {		// add geojson pois / pois: {geojson: [],targets: []}
-		if (pois.enable == undefined) pois.enable = [];
-		pois.geojson.forEach((val1, idx1) => {			// 既存Poiに追加
-			let enable = pois.enable[idx1] == undefined ? true : pois.enable[idx1];
-			let poi = { "geojson": pois.geojson[idx1], "targets": pois.targets[idx1], "enable": enable };
-			poiCont.set_geojson(poi);
-		});
-		poiCont.pdata.geojson.forEach((node, node_idx) => {
-			if (node.properties["disused:amenity"] !== undefined) console.log("a");
-			if (poiCont.latlngs[node.id] == undefined) {
-				let ll = GeoCont.flat2single(node.geometry.coordinates, node.geometry.type);
-				poiCont.latlngs[node.id] = [ll[1], ll[0]];
-				poiCont.geoidx[node.id] = node_idx;
-				if (node.geometry.type !== "Point") {
-					let targets = poiCont.pdata.targets[node_idx];
-					let exp = Conf.osm[targets[0]].expression;
-					node.properties.stroke = exp.stroke;
-					node.properties["stroke-width"] = exp["stroke-width"];
-					node.properties.fill = exp.stroke;
-					node.properties["fill-opacity"] = 0.3;
-					leaflet.geojsonAdd(node);
+		pois.geojson.forEach((node, node_idx) => {			// 既存Poiに追加
+			let enable = poiCont.pdata.enable[node_idx] == undefined ? false : poiCont.pdata.enable[node_idx];
+			let poi = { "geojson": pois.geojson[node_idx], "targets": pois.targets[node_idx], "enable": enable };
+			if (!enable) {
+				poiCont.pdata.enable[node_idx] = enable;
+				poiCont.set_geojson(poi);
+				if (node.properties["disused:amenity"] !== undefined) console.log("a");
+				if (poiCont.latlngs[node.id] == undefined) {
+					let ll = GeoCont.flat2single(node.geometry.coordinates, node.geometry.type);
+					poiCont.latlngs[node.id] = [ll[1], ll[0]];
+					poiCont.geoidx[node.id] = node_idx;
+					if (node.geometry.type !== "Point") {
+						let targets = poiCont.pdata.targets[node_idx];
+						let exp = Conf.osm[targets[0]].expression;
+						node.properties.stroke = exp.stroke;
+						node.properties["stroke-width"] = exp["stroke-width"];
+						node.properties.fill = exp.stroke;
+						node.properties["fill-opacity"] = 0.3;
+						leaflet.geojsonAdd(node);
+					};
 				};
 			};
 		});
@@ -55,7 +56,7 @@ class poiCont {
 		} else {
 			poiCont.pdata.targets[cidx] = Object.assign(poiCont.pdata.targets[cidx], poi.targets);
 		};
-		if (poi.enable !== undefined) poiCont.pdata.enable[cidx] = poi.enable;
+		poiCont.pdata.enable[cidx] = poi.enable;
 	};
 
 	static get_osmid(osmid) {           								// osmidを元にgeojsonと緯度経度、targetを返す
@@ -72,6 +73,7 @@ class poiCont {
 	};
 
 	static get_catname(tags) {          								// get Category Name from Conf.category(Global Variable)
+		if (poiCont.cat_cache[tags.id] !== undefined) return poiCont.cat_cache[tags.id];
 		let catname = "", subcatname = "", mainkey = "", mainval = "";
 		let mainkeys = Conf.category_keys.filter(key => (tags[key] !== undefined) && key !== "*");	// srarch tags
 		if (mainkeys == undefined) return Conf.category.tag['*']['*'];
@@ -93,6 +95,7 @@ class poiCont {
 			};
 		};
 		if (catname == "") console.log("poiMarker: get_catname: no key: " + mainkey + "," + mainval + " / " + tags.id);
+		poiCont.cat_cache[tags.id] = [catname, subcatname];
 		return [catname, subcatname];
 	};
 
@@ -110,7 +113,7 @@ class poiCont {
 				acts = poiCont.adata;
 				break;
 			default:
-				acts = poiCont.adata.filter(a => { return a.category == target })
+				acts = poiCont.adata.filter(a => { return a.category == target });
 				break;
 		};
 		return { "pois": pois, "acts": acts };
@@ -253,7 +256,8 @@ class poiMarker {
 			all.pois.geojson.forEach(function (geojson, idx) {
 				if (geojson.properties["disused:amenity"] !== undefined) console.log("a");
 				let poi = { "geojson": all.pois.geojson[idx], "targets": all.pois.targets[idx], "latlng": all.pois.latlng[idx], "enable": all.pois.enable[idx] };
-				if (poi.enable && GeoCont.check_inner(poi.latlng, LL)) {
+				if (poi.enable == false && GeoCont.check_inner(poi.latlng, LL)) {
+					poi.enable = true;
 					let actlists = poiCont.get_actlist(poi.geojson.id);
 					let viewflag = (actonly && actlists.length > 0) ? true : !actonly;
 					if (viewflag && !poiMarker.osmpois.includes(geojson.id)) {		// act ok and 未表示の場合
@@ -273,7 +277,8 @@ class poiMarker {
 					let osm = poiCont.get_osmid(act.osmid);
 					if (osm !== undefined && (act.category == org_target || org_target == "activity")) {
 						let poi = { "geojson": osm.geojson, "targets": osm.targets, "latlng": osm.latlng, "enable": osm.enable };
-						if (poi.enable && GeoCont.check_inner(poi.latlng, LL)) {
+						if (poi.enable == false && GeoCont.check_inner(poi.latlng, LL)) {
+							poi.enable = true;
 							poiMarker.osmpois.push(poi.geojson.id);
 							make_marker({ target: target, poi: poi, langname: 'name' }).then(marker => {
 								if (marker !== undefined) marker.forEach(val => poiMarker.markers[target].push(val));	// 複数Marker対応(Wikipediaの解説など)
