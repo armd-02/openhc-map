@@ -401,22 +401,6 @@
                 "operator"
             ]
         },
-        "wayside_shrine": {
-            "overpass": [
-                "node[\"historic\"=\"wayside_shrine\"]",
-                "way[\"historic\"=\"wayside_shrine\"]"
-            ],
-            "tags": [
-                "historic=wayside_shrine"
-            ],
-            "expression": {
-                "stroke": "#505050",
-                "stroke-width": 1
-            },
-            "titles": [
-                "name"
-            ]
-        },
         "historic_area": {
             "overpass": [
                 "node[\"historic\"=\"archaeological_site\"]",

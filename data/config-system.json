@@ -1,6 +1,8 @@
 {
     "icon": {
-        "path": "maki-icon"
+        "path": "maki-icon",
+        "normal": 32,
+        "attention": 48
     },
     "system": {
         "OverPassServer": [

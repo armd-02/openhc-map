@@ -63,7 +63,11 @@ class CMapMaker {
 			console.log("cMapmaker: get_poi: Start");
 			winCont.spinner(true);
 			var keys = (targets !== undefined && targets !== "") ? targets : Object.values(Conf.targets);
-			if ((map.getZoom() < Conf.default.PoiLoadZoom) && !Conf.static.mode) {
+			let PoiLoadZoom = 99;
+			for (let [key, value] of Object.entries(Conf.PoiViewZoom)) {
+				PoiLoadZoom = value < PoiLoadZoom ? value : PoiLoadZoom;
+			};
+			if ((map.getZoom() < PoiLoadZoom) && !Conf.static.mode) {
 				winCont.spinner(false);
 				console.log("[success]cMapmaker: get_poi End(more zoom).");
 				resolve({ "update": true });
@@ -278,7 +282,7 @@ class cMapEvents {
 		}
 		let message = `${glot.get("zoomlevel")}${map.getZoom()} `;
 		if (!poizoom) message += `<br>${glot.get("morezoom")}`;
-		$("#zoomlevel").html("<h2 class='zoom'>" + message + "</h2>");
+		zoomlevel.innerHTML = "<h2 class='zoom'>" + message + "</h2>";
 	};
 
 	keyword_change() {        				// キーワード検索

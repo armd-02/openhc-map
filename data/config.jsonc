@@ -22,16 +22,15 @@
         "phone_minZoom": 5,
         "maxZoom": 22,
         "zoomSnap": 0.5,
-        "PoiLoadZoom": 14,
         "bookmark": true
     },
     "PoiViewZoom": {
         "arts": 16,
-        "historic_area": 14,
-        "historic_poi": 16,
+        "historic_area": 16,
+        "historic_poi": 17,
         "information": 18,
-        "library": 12,
-        "museum": 12,
+        "library": 13,
+        "museum": 13,
         "worship": 14,
         "wikipedia": 15
     },

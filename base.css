@@ -95,21 +95,21 @@ img.thumbnail {
     box-shadow: 2px 2px 2px rgb(0 0 0 / 60%);
 }
 
-img.icon_normal {
+img.normal {
     background: url("./image/icon_circle.svg");
     background-size: cover;
     float: left;
-    padding: 4px;
+    padding: 4px !important;
     height: 32px;
     width: 32px;
     object-fit: contain;
 }
 
-img.icon_attention {
+img.attention {
     background: url("./image/icon_circle_attention.svg");
     background-size: cover;
     float: left;
-    padding: 8px;
+    padding: 8px !important;
     height: 48px;
     width: 48px;
     object-fit: contain;

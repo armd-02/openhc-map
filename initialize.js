@@ -16,6 +16,7 @@ var modal_activities = new modal_Activities();
 var modal_wikipedia = new modal_Wikipedia();
 var basic = new Basic();
 var leaflet = new Leaflet();
+var GeoCont = new Geocont();
 
 // initialize
 console.log("Welcome to MapMaker.");
