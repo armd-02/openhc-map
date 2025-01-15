@@ -33,6 +33,8 @@
 - 2022/11/01 小さなバグを修正
 - 2022/11/05 小さなバグを修正&ライブラリの更新
 - 2025/01/16 大規模システム更新
+  - タイトル変更
+    - 「Open History & Culture Map」から「Open History & Culture Map」へ
   - ベースシステムを最新のCommunity Mapmakerへ更新
   - アイコン追加（歴史的建築物）
   - 建物とアイコン取得の処理でbuilding=yesの優先順位を下げる
