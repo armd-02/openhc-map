@@ -1,8 +1,5 @@
 function doGet(e) {
 
-  var digest = makeSHA256("saka");
-  Logger.log(digest);
-
   // シート取得&データ入力
   var ss = SpreadsheetApp.openById(SpreadsheetApp.getActiveSpreadsheet().getId());
   var sheet, idsheet;
@@ -14,9 +11,31 @@ function doGet(e) {
   var retdata = "", userrow = 0;
   var nowdt = new Date();
 
+  // \uXXXX形式を通常の文字に戻す関数
+  function unescapeUnicode(str) {
+    return str.replace(/\/\/u([\dA-Fa-f]{4})/g, function (match, grp) {
+      return String.fromCharCode(parseInt(grp, 16));
+    });
+  }
+
+  // エスケープされたUnicode JSONをパースする関数
+  function parseEscapedUnicodeJSON(escaped) {
+    try {
+      //エスケープ解除後にJSON.parse
+      let unescape = unescapeUnicode(escaped);
+      var jsonData = JSON.parse(unescape);
+      Logger.log("unescapeUnicode: OK");
+      Logger.log("Parsed JSON data: " + JSON.stringify(jsonData));
+      return jsonData;
+    } catch (e) {
+      Logger.log("JSON parse error: " + e.message);
+      return null;
+    }
+  }
+
   sheet = ss.getSheetByName("activity");
   idsheet = ss.getSheetByName("user");
-  if (jsonSt !== "") params = JSON.parse(jsonSt);
+  if (jsonSt !== "") params = parseEscapedUnicodeJSON(jsonSt);
   if (userid !== "") userrow = findRow(idsheet, userid, 1);
   Logger.log("jsonp: " + jsonSt);
   Logger.log("userid: rownum: " + userrow);
@@ -36,7 +55,7 @@ function doGet(e) {
     // ユーザー認証
     var mtpass = idsheet.getRange(userrow, 2).getValue();
     var mtsalt = idsheet.getRange(userrow, 3).getValue();
-    digest = makeSHA256(mtpass + mtsalt);
+    var digest = makeSHA256(mtpass + mtsalt);
     if (digest == passwd && userrow > 0) {
       var rows = sheet.getDataRange().getValues();
       var keys = rows.splice(0, 1)[0];
@@ -46,8 +65,18 @@ function doGet(e) {
         keys.forEach(function (key) {
           if (key == "updatetime") {
             row.push(nowdt);
-          } else {
-            row.push(param[key]);
+          }
+          else if (key == "updateuser") {
+            row.push(userid);
+          }
+          else {
+            let value = param[key];
+            try {
+              value = value !== "" ? value.replace(/<br\s*\/?>/gi, "\n") : "";
+            } catch {
+              value = param[key];
+            }
+            row.push(value);
           }
         });
         Logger.log("Params: id " + param.id + " / ROWNUM:" + rownum);
@@ -74,7 +103,7 @@ function doGet(e) {
   };
 
   Logger.log(retdata);
-  return ContentService.createTextOutput("GDocReturn(" + retdata + ")").setMimeType(ContentService.MimeType.JAVASCRIPT);
+  return ContentService.createTextOutput(retdata).setMimeType(ContentService.MimeType.JSON);
 }
 
 function getData(sheet) {
