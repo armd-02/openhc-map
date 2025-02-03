@@ -1,9 +1,8 @@
-# Open History & Culture Map
+# みんなの歴史文化マップ(旧:Open History & Culture Map)
 ## このアプリについて
 - OpenStreetMapのデータから歴史、文化関連の地物を表示するWebアプリです。
 - 以下のサイトで公開しています。どなたでもご自由にご利用ください。
-- Open History & Culture Map
-    - https://armd-02.github.io/openhc-map/
+- https://armd-02.github.io/openhc-map/
 
 ## fork元のプロジェクト
 - Open History & Culture MapはCommunity Mapmakerをベースに開発しています。
@@ -34,7 +33,7 @@
 - 2022/11/05 小さなバグを修正&ライブラリの更新
 - 2025/01/16 大規模システム更新
   - タイトル変更
-    - 「Open History & Culture Map」から「Open History & Culture Map」へ
+    - 「Open History & Culture Map」から「みんなの歴史文化マップ」へ
   - ベースシステムを最新のCommunity Mapmakerへ更新
   - アイコン追加（歴史的建築物）
   - 建物とアイコン取得の処理でbuilding=yesの優先順位を下げる
