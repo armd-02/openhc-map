@@ -95,3 +95,37 @@ img.middle:active,
 img.normal:active {
     margin-top: 10px;
 }
+
+/* History and culture map: understated washi with clear content surfaces. */
+.basemenu {
+    background-color: #f5f1e8;
+    background-size: 512px 512px;
+    background-repeat: repeat;
+    border-color: #ddd5c5;
+}
+
+#bottom-pane {
+    background-color: #f8f5ee;
+    background-image: linear-gradient(rgba(255, 254, 250, .45), rgba(255, 254, 250, .45)), var(--bg-url, none);
+    background-size: auto, 512px 512px;
+    background-repeat: repeat;
+}
+
+#detailMenu,
+#listPanel {
+    background-color: #fffefa;
+    border-color: #ddd5c5;
+}
+
+#detailHeader,
+#listHeader {
+    background-color: #eee8db;
+    color: #353128;
+}
+
+#listArea .list-group-item {
+    --bs-list-group-bg: #fffefa;
+    --bs-list-group-border-color: #ddd5c5;
+    --bs-list-group-action-hover-bg: #f5f1e8;
+    --bs-list-group-action-active-bg: #eee8db;
+}

@@ -9,12 +9,6 @@
 - Open History & Culture Mapの成果はCommunity Mapmakerへ還元する予定です。
 - https://github.com/K-Sakanoshita/community_mapmaker
 
-## ベースコードの更新
-
-2026/11/03 に [Community Map Maker](https://github.com/K-Sakanoshita/community_mapmaker/commit/8526f8c62c310871a744d88c7f1b181be2d98e7f) (`8526f8c`) のコード・ライブラリ・関連素材を取り込みました。
-
-歴史文化マップのカテゴリ、Overpass取得対象、活動フォーム、表示文言、初期位置、背景地図、Google Apps Script接続先、Analytics、画像、`user.css` は引き継いでいます。設定は最新版の `poiView`、`thumbnail`、`static.use`、`activity`、PNGアイコンに合わせて移行しました。一覧の列は `data/listtable.jsonc` を使用します。新しい3D・インドア表示や外部サービスは自動で有効にしていません。
-
 ## 活動データの接続
 
 活動データは [Community Mapmaker Backend](https://github.com/K-Sakanoshita/community_mapmaker_backend) のプロジェクト `openhc` から取得します。`data/config-user.jsonc` の設定は次のとおりです。
@@ -74,6 +68,12 @@ python3 -m http.server 8765 --bind 127.0.0.1
   - アイコン追加（歴史的建築物）
   - 建物とアイコン取得の処理でbuilding=yesの優先順位を下げる
 - 2025/02/03 Google アナリティクスを設定
-- 2026/11/03 Community Map Maker最新版へ更新し、既存の歴史文化マップ設定を移行
+- 2026/11/03 [Community Map Maker最新版](https://github.com/K-Sakanoshita/community_mapmaker/commit/8526f8c62c310871a744d88c7f1b181be2d98e7f)へ更新
+  - 歴史文化マップのカテゴリ・初期位置などの既存設定を引き継ぎ、設定形式とPNGアイコンを移行
   - 活動データの接続先をバックエンドのプロジェクト `openhc` に変更
   - ローカル起動手順とバックエンドのOrigin許可設定を追記
+  - メニューとリストの背景を淡い和紙に変更
+  - リストの縦折り返しと名前のない地物のアイコン欠落を修正し、宗教・宗派・年代を補足表示
+  - 詳細が短い地物でもOpenStreetMapのメニューが隠れないよう修正
+  - 道しるべ・観光案内所・情報端末を取得対象から除外（案内図は継続表示）
+  - 取得できないサムネイルを非表示にし、対象URL・地物ID・失敗理由をコンソールに出力

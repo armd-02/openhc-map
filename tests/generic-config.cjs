@@ -58,7 +58,7 @@ assert.equal(prepared.etc.reverseIcon, false);
 assert.equal(prepared.selectItem.default, '');
 assert.equal(prepared.icon.markerColors.attention.stroke, '#888888');
 assert.equal(JSON.stringify(parse('data/listtable.jsonc').list.columns.poiFields),
-    '["id","#category","name"]');
+    '["id","#category","name","religion","denomination","start_date",""]');
 // The application merges these files shallowly, in this order.
 const loaded = Object.assign({}, ...[
     'data/config-user.jsonc', 'data/config-system.jsonc', 'data/config-activities.jsonc',
@@ -68,7 +68,7 @@ assert.equal(JSON.stringify(loaded.listTable), JSON.stringify(config.listTable),
     'loading list columns must preserve the complete user list settings');
 assert.equal(loaded.listTable.nameFallback, 'category');
 assert.equal(loaded.listTable.playback.view, false);
-assert.equal(loaded.listTable.backgroundImage, './image/transparent.png');
+assert.equal(loaded.listTable.backgroundImage, './image/washi-ivory.webp');
 assert.ok(fs.existsSync(loaded.listTable.backgroundImage));
 assert.equal(loaded.listTable.category, 'tags');
 assert.equal(loaded.listTable.target, 'tags');

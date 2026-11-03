@@ -145,7 +145,7 @@
     },
     "listTable": {
         "nameFallback": "category",
-        "backgroundImage": "./image/transparent.png",
+        "backgroundImage": "./image/washi-ivory.webp",
         "category": "tags",
         "target": "tags",
         "allActs": true,

@@ -27,7 +27,7 @@
                 "nwr[\"amenity\"]",
                 "nwr[\"emergency\"=\"fire_lookout\"]",
                 "nwr[\"historic\"]",
-                "nwr[\"tourism\"]"
+                "nwr[\"tourism\"][\"information\"!=\"guidepost\"][\"information\"!=\"office\"][\"information\"!=\"terminal\"]"
             ],
             "tags": [
                 "amenity=library",
