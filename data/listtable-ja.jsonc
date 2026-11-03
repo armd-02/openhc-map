@@ -14,19 +14,21 @@
                 },
                 {
                     "id": "name",
-                    "name": "施設名",
+                    "name": "名称",
                     "width": "30%"
                 }
             ],
             "poi_fields": [
                 "id",
                 "#category",
-                "name"
+                "name",
+                ""
             ],
-            "act_fields": [
+            "act_fields": [     //#付きはOSMタグ、ただし#categoryのみ内部判定結果
                 "id",
                 "#category",
-                "#name"
+                "memo",
+                "picture_url1"
             ]
         }
     }

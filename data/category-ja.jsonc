@@ -1,6 +1,7 @@
 {
     "category": {
-        // 下記の順番はカテゴリ名を取得する時の優先順位にもなる
+        // カテゴリ名取得は最初に見つかったものから
+        // marker.jsoncと行数合わせの行
         "*": {
             "*": "-"
         },
@@ -115,6 +116,16 @@
         "disused:amenity": {
             "school": "廃校"
         },
+        "emergency": {
+            "assembly_point": "避難場所",
+            "fire_extinguisher": "消火器",
+            "fire_hydrant": "消火栓",
+            "fire_hose": "消火ホース",
+            "fire_lookout": "火の見櫓",
+            "defibrillator": "AED",
+            "siren": "サイレン",
+            "water_tank": "防火水槽"
+        },
         "healthcare": {
             "alternative": "治療院"
         },
@@ -211,21 +222,15 @@
             "wetland": "湿地帯",
             "wood": "森"
         },
-        "emergency": {
-            "assembly_point": "待ち合わせスポット",
-            "fire_extinguisher": "消火器",
-            "fire_hydrant": "消火栓",
-            "fire_hose": "消火ホース",
-            "fire_lookout": "火の見櫓",
-            "defibrillator": "AED",
-            "siren": "サイレン",
-            "water_tank": "防火水槽"
-        },
         "highway": {
             "bus_stop": "バス停",
             "traffic_signals": "信号機",
+            "steps": "階段",
             "street_lamp": "街灯",
             "elevator": "エレベーター"
+        },
+        "social_facility": {
+            "shelter": "一時避難所"
         },
         "playground": {
             "activitypanel": "パネル遊具",
@@ -285,6 +290,7 @@
             "hostel": "簡易宿泊所",
             "information": "案内",
             "museum": "美術館",
+            "picnic_site": "ピクニックサイト",
             "viewpoint": "ビューポイント",
             "zoo": "動物園"
         },
@@ -302,6 +308,7 @@
             "heritage": "遺産",
             "tomb": "墓",
             "locomotive": "機関車(引退済み)",
+            "street_lamp": "照明（保存）",
             "wayside_shrine": "地蔵・道祖神",
             "wayside_cross": "十字架",
             "vehicle": "車両(展示)"
@@ -322,17 +329,6 @@
             "surveillance": "監視機器",
             "works": "工場"
         },
-        "leisure": {
-            "adult_gaming_centre": "パチンコ/パチスロ",
-            "amusement_arcade": "ゲームセンター",
-            "garden": "庭",
-            "dance": "ダンスホール",
-            "fitness_centre": "フィットネスセンター",
-            "pitch": "グラウンド",
-            "park": "公園",
-            "playground": "児童公園",
-            "swimming_pool": "水泳プール"
-        },
         "landuse": {
             "farmland": "農地",
             "religious": "信仰",
@@ -344,6 +340,17 @@
             "retail": "商業エリア",
             "grass": "芝生",
             "recreation_ground": "レクリエーション広場"
+        },
+        "leisure": {
+            "adult_gaming_centre": "パチンコ/パチスロ",
+            "amusement_arcade": "ゲームセンター",
+            "garden": "庭",
+            "dance": "ダンスホール",
+            "fitness_centre": "フィットネスセンター",
+            "pitch": "グラウンド",
+            "park": "公園",
+            "playground": "児童公園",
+            "swimming_pool": "水泳プール"
         },
         "railway": {
             "station": "鉄道駅"
@@ -372,6 +379,9 @@
         "amenity": {
             "gambling": {
                 "mahjong": "麻雀"
+            },
+            "social_facility": {
+                "shelter": "一時避難所"
             }
         },
         "artwork": {

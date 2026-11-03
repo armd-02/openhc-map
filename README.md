@@ -9,6 +9,42 @@
 - Open History & Culture Mapの成果はCommunity Mapmakerへ還元する予定です。
 - https://github.com/K-Sakanoshita/community_mapmaker
 
+## ベースコードの更新
+
+2026/11/03 に [Community Map Maker](https://github.com/K-Sakanoshita/community_mapmaker/commit/8526f8c62c310871a744d88c7f1b181be2d98e7f) (`8526f8c`) のコード・ライブラリ・関連素材を取り込みました。
+
+歴史文化マップのカテゴリ、Overpass取得対象、活動フォーム、表示文言、初期位置、背景地図、Google Apps Script接続先、Analytics、画像、`user.css` は引き継いでいます。設定は最新版の `poiView`、`thumbnail`、`static.use`、`activity`、PNGアイコンに合わせて移行しました。一覧の列は `data/listtable.jsonc` を使用します。新しい3D・インドア表示や外部サービスは自動で有効にしていません。
+
+## 活動データの接続
+
+活動データは [Community Mapmaker Backend](https://github.com/K-Sakanoshita/community_mapmaker_backend) のプロジェクト `openhc` から取得します。`data/config-user.jsonc` の設定は次のとおりです。
+
+```json
+"activity": {
+    "url": "https://armd-01.sakura.ne.jp/community-mapmaker-backend/api/activities.php?app=openhc",
+    "authMode": "basic",
+    "targetName": "activity"
+}
+```
+
+閲覧時は公開APIを使用し、投稿・編集時はバックエンドの認証を使用します。既存の活動ID（`openhc-map/...`）とフォーム設定は引き継いでいます。旧 `google.AppScript` の値は保存していますが、接続には `activity.url` を使用します。
+
+## ローカルでの確認
+
+ビルドは不要です。リポジトリのルートでHTTPサーバーを起動します。
+
+```bash
+python3 -m http.server 8765 --bind 127.0.0.1
+```
+
+[ローカルの地図](http://127.0.0.1:8765/)を開いてください。回帰テストは `node tests/run.cjs` で実行します。
+
+本番バックエンドから活動データを取得するには、バックエンドの `auth.allowed_origins` に `http://127.0.0.1:8765` を追加する必要があります。Originはプロトコル・ホスト名・ポート番号の組み合わせなので、`localhost` や別のポートで開く場合は、そのOriginも個別に許可してください。
+
+許可されていない接続元には `403 origin_not_allowed` が返ります。この場合、OSMの地物が表示されていても、バックエンドの説明文・確認日・写真などの活動情報は表示されません。APIのURLを直接開けても、地図からの取得が許可されているとは限りません。
+
+公開サイトのOriginは `https://armd-02.github.io` です。バックエンドの許可設定にはリポジトリのパス `/openhc-map/` を含めません。
+
 ## 更新履歴
 - 2022/03/04 初版公開
 - 2022/03/05 アート作品も表示するように機能追加
@@ -38,3 +74,6 @@
   - アイコン追加（歴史的建築物）
   - 建物とアイコン取得の処理でbuilding=yesの優先順位を下げる
 - 2025/02/03 Google アナリティクスを設定
+- 2026/11/03 Community Map Maker最新版へ更新し、既存の歴史文化マップ設定を移行
+  - 活動データの接続先をバックエンドのプロジェクト `openhc` に変更
+  - ローカル起動手順とバックエンドのOrigin許可設定を追記

@@ -1,0 +1,24 @@
+{
+    "list": {
+        "columns": {
+            "style": [
+                {
+                    "className": "col-6"
+                },
+                {
+                    "className": "col-6"
+                }
+            ],
+            "poiFields": [
+                "id",
+                "#category",
+                "name"
+            ],
+            "actFields": [
+                "id",
+                "#category",
+                "memo"
+            ]
+        }
+    }
+}

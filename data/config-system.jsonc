@@ -1,4 +1,3 @@
-// Community Mapmaker System Config
 {
     "wikipedia": {
         "marker": "wikipedia.svg",
@@ -8,22 +7,19 @@
         "tag": "wikipedia",
         "image": true
     },
-    "icon": {
-        "path": "maki-icon",
-        "normal": 32,
-        "attention": 48
-    },
     "system": {
         "OverPassServer": [
-            "https://overpass.openstreetmap.jp/api/interpreter",
-            "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+            "https://armd-01.sakura.ne.jp/api/overpass_proxy.php",
             "https://overpass.kumi.systems/api/interpreter",
             "https://overpass-api.de/api/interpreter"
-        ]
+        ],
+        "NoChacheServer": "https://overpass-api.de/api/interpreter"
     },
     "tile": {
         "OSMFJ": {
-            "style": "./tiles/osmfj_nopoi.json"
+            "style": "./tiles/osmfj_nopoi.json",
+            "name": "OSMFJ",
+            "skip": false
         },
         "OSM_Standard": {
             "style": {
@@ -45,8 +41,11 @@
                         "type": "raster",
                         "source": "rtile"
                     }
-                ]
-            }
+                ],
+                "glyphs": "https://tile.openstreetmap.jp/fonts/{fontstack}/{range}.pbf"
+            },
+            "name": "OSM_Standard",
+            "skip": false
         },
         "GSI_pale": {
             "style": {
@@ -68,8 +67,11 @@
                         "type": "raster",
                         "source": "rtile"
                     }
-                ]
-            }
+                ],
+                "glyphs": "https://tile.openstreetmap.jp/fonts/{fontstack}/{range}.pbf"
+            },
+            "name": "GSI_pale",
+            "skip": false
         },
         "GSI_ort": {
             "style": {
@@ -91,8 +93,11 @@
                         "type": "raster",
                         "source": "rtile"
                     }
-                ]
-            }
+                ],
+                "glyphs": "https://tile.openstreetmap.jp/fonts/{fontstack}/{range}.pbf"
+            },
+            "name": "GSI_ort",
+            "skip": false
         }
     },
     "menu_list": {

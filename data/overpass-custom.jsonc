@@ -25,11 +25,13 @@
         "historic_poi": {
             "overpass": [
                 "nwr[\"amenity\"]",
+                "nwr[\"emergency\"=\"fire_lookout\"]",
                 "nwr[\"historic\"]",
                 "nwr[\"tourism\"]"
             ],
             "tags": [
                 "amenity=library",
+                "emergency=fire_lookout",
                 "tourism=artwork",
                 "tourism=museum",
                 "tourism=information",

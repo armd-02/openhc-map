@@ -3425,7 +3425,7 @@
             "minzoom": 13,
             "maxzoom": 14,
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": "rgba(189, 185, 181, 0.3)",
@@ -3459,12 +3459,27 @@
                     "type": "identity",
                     "property": "render_min_height"
                 },
-                "fill-extrusion-color": "rgba(189, 185, 181, 1)",
+                "fill-extrusion-color": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "get",
+                        "render_height"
+                    ],
+                    0,
+                    "#e8e0e0",
+                    20,
+                    "#d8d0d0",
+                    40,
+                    "#c8c0c0"
+                ],
                 "fill-extrusion-height": {
                     "type": "identity",
                     "property": "render_height"
                 },
-                "fill-extrusion-opacity": 0.3
+                "fill-extrusion-opacity": 0.4
             },
             "metadata": {},
             "filter": [

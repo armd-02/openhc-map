@@ -66,7 +66,7 @@ window.addEventListener("DOMContentLoaded", function () {
         glot.data = Object.assign(glot.data, JSON5.parse(texts[9])); // import glot data
         glot.data = Object.assign(glot.data, JSON5.parse(texts[10])); // import glot data
         window.onresize = winCont.window_resize; // 画面サイズに合わせたコンテンツ表示切り替え
-        //document.title = glot.get("site_title"); // Title
+        // document.title = glot.get("site_title"); // Google検索のインデックス反映が読めないので一旦なし
         let UrlParams = setUrlParams();
         if (UrlParams.edit) Conf.etc["editMode"] = true;
         winCont.splash(true);
@@ -127,22 +127,26 @@ window.addEventListener("DOMContentLoaded", function () {
                 });
             };
 
-            // Load gSheet's OSM Data
-            poiCont.setActdata(results[0]); // gSheetをPoiContにセット
-            let osmids = poiCont.pois().acts.map((act) => {
-                return act.osmid;
-            });
-            osmids = osmids.filter(Boolean);
-            if (osmids.length > 0 && !Conf.static.mode) {
-                basic
-                    .retry(() => overPassCont.getOsmIds(osmids), 5)
-                    .then((geojson) => {
-                        poiCont.addGeojson(geojson);
-                        poiCont.setActlnglat();
-                        init_close();
-                    });
+            // Load gSheet's OSM Data(件数が増えるとサーバから拒否されるので停止)
+            poiCont.setActdata(results[0]); // gSheetをPoiContにセット(座標は無いのでOSM読み込み時にマッチング)
+            if (Conf.view.poiActLoad) {
+                let osmids = poiCont.pois().acts.map((act) => {
+                    return act.osmid;
+                });
+                osmids = osmids.filter(Boolean);
+                if (osmids.length > 0 && !Conf.static.mode) {
+                    basic
+                        .retry(() => overPassCont.getOsmIds(osmids), 5)
+                        .then((geojson) => {
+                            poiCont.addGeojson(geojson);
+                            poiCont.setActlnglat();
+                            init_close();
+                        });
+                } else {
+                    poiCont.setActlnglat();
+                    init_close();
+                }
             } else {
-                poiCont.setActlnglat();
                 init_close();
             }
         });
