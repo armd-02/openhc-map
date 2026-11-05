@@ -18,7 +18,7 @@
     "tile": {
         "OSMFJ": {
             "style": "./tiles/osmfj_nopoi.json",
-            "name": "OSMFJ",
+            "name": "OpenStreetMap(3D/OSMFJ提供)",
             "skip": false
         },
         "OSM_Standard": {
@@ -44,7 +44,7 @@
                 ],
                 "glyphs": "https://tile.openstreetmap.jp/fonts/{fontstack}/{range}.pbf"
             },
-            "name": "OSM_Standard",
+            "name": "OpenStreetMap標準地図(2D)",
             "skip": false
         },
         "GSI_pale": {
@@ -70,7 +70,7 @@
                 ],
                 "glyphs": "https://tile.openstreetmap.jp/fonts/{fontstack}/{range}.pbf"
             },
-            "name": "GSI_pale",
+            "name": "地理院地図(淡色)",
             "skip": false
         },
         "GSI_ort": {
@@ -96,7 +96,7 @@
                 ],
                 "glyphs": "https://tile.openstreetmap.jp/fonts/{fontstack}/{range}.pbf"
             },
-            "name": "GSI_ort",
+            "name": "地理院地図(航空写真)",
             "skip": false
         }
     },
