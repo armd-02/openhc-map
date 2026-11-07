@@ -84,3 +84,9 @@ python3 -m http.server 8765 --bind 127.0.0.1
 
 - 2026/11/05 背景地図の表示名を分かりやすく変更
   - OpenStreetMapの3D・標準地図、地理院の淡色地図・航空写真を区別できる表記に変更
+
+- 2026/11/07 歴史カテゴリの名称と設定を更新
+  - `historic=manor`（邸宅）と `historic=stone`（歴史的な石）の日本語・英語の表示名を追加
+  - 優先するOverpass接続先を `https://armd-01.sakura.ne.jp/api/interpreter` に変更
+  - 背景マーカーの設定から `circle_marker.png` を除外
+  - 不要な画像・画像編集元とVS Codeのローカル設定を削除

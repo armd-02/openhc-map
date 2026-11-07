@@ -893,7 +893,6 @@
             }
         },
         "background": [
-            "circle_marker.png",
             "circle_shadow.png"
         ]
     }
